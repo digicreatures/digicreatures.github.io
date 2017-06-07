@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>digiCreatures - models</title><link href="http://digicreatures.net/" rel="alternate"></link><link href="http://digicreatures.net/feeds/models.atom.xml" rel="self"></link><id>http://digicreatures.net/</id><updated>2017-04-25T20:00:00+02:00</updated><entry><title>La Sphinge</title><link href="http://digicreatures.net/models/la-sphinge.html" rel="alternate"></link><published>2017-04-25T20:00:00+02:00</published><updated>2017-04-25T20:00:00+02:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-04-25:/models/la-sphinge.html</id><summary type="html">&lt;p class="first last"&gt;a personal vision of the mythological creature&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Sphinge is the French word for female sphinx. From my perspective, it is fundamentally a dual character: fascinating and repelling.
+I wouldn't like to create a character like the one of antic sculptures or on 19th century paintings.
+She should be more tribal and mystical with body paintings and golden jewelries.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/la_sphinge/sphinge01.jpg" data-lightbox="la_sphinge"&gt;&lt;img alt="La sphinge mystical pose" src="http://digicreatures.net/photos/la_sphinge/sphinge01t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/la_sphinge/sphinge02.jpg" data-lightbox="la_sphinge"&gt;&lt;img alt="La sphinge deploying her wings" src="http://digicreatures.net/photos/la_sphinge/sphinge02t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/la_sphinge/sphinge03.jpg" data-lightbox="la_sphinge"&gt;&lt;img alt="La sphinge facing the intruder" src="http://digicreatures.net/photos/la_sphinge/sphinge03t.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;This model was made during my training week with &lt;a class="reference external" href="http://p2design.eu/"&gt;Pierrick Picaut&lt;/a&gt;.
+We had really interesting discussions about the concept of this character.
+Unfortunately, I didn't succeed in embodying all ideas we discussed about (including jewelries).
+Pierrick has also released his &lt;a class="reference external" href="https://blenderartists.org/forum/showthread.php?420404-Sphinge"&gt;own version&lt;/a&gt;.
+His vision was definitely more fiendish than mine.&lt;/p&gt;
+&lt;p&gt;I also uploaded a simplified version on Sketchfab:&lt;/p&gt;
+
+&lt;div class="sketchfab-viewer "&gt;
+    &lt;iframe width="900" height="530" src="https://sketchfab.com/models/aaa58f36bfaf46c6a6de6647489ebd47/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""&gt;&lt;/iframe&gt;
+&lt;/div&gt;</content><category term="creature"></category><category term="character"></category><category term="sphinge"></category><category term="sketchfab"></category><category term="sculpt"></category></entry><entry><title>The Batmobile</title><link href="http://digicreatures.net/models/the-batmobile.html" rel="alternate"></link><published>2017-02-26T12:00:00+01:00</published><updated>2017-02-26T12:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-02-26:/models/the-batmobile.html</id><summary type="html">&lt;p class="first last"&gt;from the 1989 Tim Burton's movie&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Car modeling is by no doubt a good way to improve hard surface modeling skills. But I really don't care about cars!
+I don't even have a car! After a while, it appeared to me the only car I could find an interest in was the Batmobile designed
+by Anton Furst for &lt;a class="reference external" href="https://www.youtube.com/watch?v=we_eTOeNSEE"&gt;Tim Burton's movie in 1989&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Luckily, I found out websites with many shots of this car and even blueprints created by fans who built their
+own version! I also discovered that the car is in fact pretty bulky. You don't have this impression watching
+the movie because the first time you see it, it is shot wide-angle. So I used the same trick for my renders.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_001.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: front view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_001t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_002.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: side view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_002t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_003.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: rear view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_003t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_004.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: front view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_004t.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;I did not use any particular trick for modeling. All the stuff was about extruding and moving vertices in Blender. I also used a polish brush
+in sculpt mode to flatten the car body.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_white.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: plastic view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_whitet.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;For material creation, I combined my own materials with ones from &lt;a class="reference external" href="https://www.cyclesmaterialvault.com/"&gt;CMV&lt;/a&gt;. I tweaked lighting setup
+created with &lt;a class="reference external" href="https://blendermarket.com/products/pro-lighting-studio"&gt;Pro lighting studio&lt;/a&gt;. So this is definitely not a $0 rendering
+but these addons help a lot.&lt;/p&gt;
+</content><category term="hard-surface"></category><category term="modeling"></category><category term="car"></category><category term="fan art"></category><category term="batmobile"></category></entry><entry><title>Human topology</title><link href="http://digicreatures.net/models/human-topology.html" rel="alternate"></link><published>2017-02-22T20:00:00+01:00</published><updated>2017-02-22T20:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-02-22:/models/human-topology.html</id><summary type="html">&lt;p class="first last"&gt;sculpt and retopology of a human body&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;After watching several videos about human topology
+(like &lt;a class="reference external" href="https://cgcookie.com/archive/learning-mesh-topology-collection/"&gt;Jonathan Williamson's courses&lt;/a&gt;)
+and after following Angela Guenette's (great) tutorial &lt;a class="reference external" href="https://store.blender.org/product/blenderella-download/"&gt;Blenderella&lt;/a&gt;,
+I collected some reference images and sculpted and retopologized this human body.&lt;/p&gt;
+&lt;p&gt;The material is quite simple and I didn't intent to create a super realistic skin shader.
+I used a normal map baked from the sculpt, a bump map for adding details (mostly on the face)
+, a noisy texture to add additional bumpiness all over the body and a really basic combination of diffuse, glossy and SSS shaders.
+I really like the final result for the eyes. Probably because I didn't make them.
+I used the &lt;em&gt;human eye&lt;/em&gt; released by MmAaXx on &lt;a class="reference external" href="http://www.blendswap.com/blends/view/72514"&gt;Blendswap&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="images docutils container"&gt;
+&lt;a href="http://digicreatures.net/photos/human_topology/body001.jpg" data-lightbox="human_topology"&gt;&lt;img alt="male character rendered with Blender and Cycles" src="http://digicreatures.net/photos/human_topology/body001t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/human_topology/body001_topology.jpg" data-lightbox="human_topology"&gt;&lt;img alt="male character topology rendered with Blender and Cycles" src="http://digicreatures.net/photos/human_topology/body001_topologyt.jpg" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;For retopology in Blender, I used the setup described by &lt;a class="reference external" href="http://zachariasreinhardt.com/how-to-set-up-retopology-in-blender-tutorial/"&gt;Zacharias Reinhardt&lt;/a&gt;.
+For the bump map, I painted it directly over the 3D model in Cycles. Yanal Sosak has made a great tutorial about &lt;a class="reference external" href="https://www.youtube.com/watch?v=fZyRimOBU-g"&gt;painting bump map in Cycles&lt;/a&gt;.
+Very useful to know we can now use Cycles for bump painting.&lt;/p&gt;
+&lt;div class="images docutils container"&gt;
+&lt;a href="http://digicreatures.net/photos/human_topology/body002.jpg" data-lightbox="human_topology"&gt;&lt;img alt="human face rendered with Blender and Cycles" src="http://digicreatures.net/photos/human_topology/body002t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/human_topology/body002_topology.jpg" data-lightbox="human_topology"&gt;&lt;img alt="human face topology rendered with Blender and Cycles" src="http://digicreatures.net/photos/human_topology/body002_topologyt.jpg" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="images docutils container"&gt;
+&lt;a href="http://digicreatures.net/photos/human_topology/body003.jpg" data-lightbox="human_topology"&gt;&lt;img alt="human front face body rendered with Blender and Cycles" src="http://digicreatures.net/photos/human_topology/body003t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/human_topology/body003_topology.jpg" data-lightbox="human_topology"&gt;&lt;img alt="human front face topology rendered with Blender and Cycles" src="http://digicreatures.net/photos/human_topology/body003_topologyt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/human_topology/body004.jpg" data-lightbox="human_topology"&gt;&lt;img alt="human back face body rendered with Blender and Cycles" src="http://digicreatures.net/photos/human_topology/body004t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/human_topology/body004_topology.jpg" data-lightbox="human_topology"&gt;&lt;img alt="human back face topology rendered with Blender and Cycles" src="http://digicreatures.net/photos/human_topology/body004_topologyt.jpg" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+</content><category term="topology"></category><category term="character"></category><category term="human"></category><category term="male"></category><category term="sculpt"></category></entry><entry><title>The mourner</title><link href="http://digicreatures.net/models/the-mourner.html" rel="alternate"></link><published>2016-12-19T12:00:00+01:00</published><updated>2016-12-19T12:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2016-12-19:/models/the-mourner.html</id><summary type="html">&lt;p class="first last"&gt;draperie study inspired from the &lt;em&gt;mourners of dijon&lt;/em&gt;&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;While I wanted to learn to sculpt draperies in Blender, I discovered &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Claus_Sluter"&gt;Claus Sluter&lt;/a&gt;,
+a Dutch sculptor who worked for the Duke of Burgundy in France during the late 1390's. He realized with his nephew &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Mourners_of_Dijon"&gt;the mourners
+of Dijon&lt;/a&gt; made of albaster. Some of them are entirely covered with fabrics
+and it inspired me this sculpture.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/mourner/mourner.jpg" data-lightbox="mourner"&gt;&lt;img alt="The mourner created with Blender and Cycles" src="http://digicreatures.net/photos/mourner/mournert.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;Of course, I didn't succeed in achieving the same finess as the original ones. So I chose to use clay material for the render
+to suggest an unfinished work.&lt;/p&gt;
+&lt;div class="images docutils container"&gt;
+&lt;a href="http://digicreatures.net/photos/mourner/mourner_ogl1.jpg" data-lightbox="mourner"&gt;&lt;img alt="The mourner viewport preview" src="http://digicreatures.net/photos/mourner/mourner_ogl1t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/mourner/mourner_ogl2.jpg" data-lightbox="mourner"&gt;&lt;img alt="The mourner viewport preview" src="http://digicreatures.net/photos/mourner/mourner_ogl2t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/mourner/mourner_ogl3.jpg" data-lightbox="mourner"&gt;&lt;img alt="The mourner viewport preview" src="http://digicreatures.net/photos/mourner/mourner_ogl3t.jpg" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+</content><category term="sculpt"></category><category term="character"></category><category term="fabric"></category><category term="draperie"></category></entry></feed>

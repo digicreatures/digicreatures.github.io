@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta name="keywords" content="3D,CG,3D generalist,Blender,Cycles,Rigging,Shading,Animation,Rendering,Krita,Gimp,Open source,Linux,David Gayerie" />
+          <meta name="keywords" content="3D,CG,3D generalist,Blender,Cycles,Rigging,Shading,Animation,Rendering,Krita,Gimp,Open source,Linux,David Gayerie,sculpt,character,fabric,draperie" />
         <meta name="authors" content="David Gayerie" />
-        <title>digiCreatures</title>
+        <title>digiCreatures - The mourner</title>
         <link rel="stylesheet" href="http://digicreatures.net/theme/css/normalize.css" />
         <link rel="stylesheet" href="http://digicreatures.net/theme/css/main.css" />
         <meta charset="utf-8" />
         <link href="http://digicreatures.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="digiCreatures Full Atom Feed" />
+        <link href="http://digicreatures.net/feeds/models.atom.xml" type="application/atom+xml" rel="alternate" title="digiCreatures Categories Atom Feed" />
+
+  <meta name="description" content="The mourner - draperie study inspired from the mourners of dijon" />
+  <link rel="stylesheet" href="http://digicreatures.net/theme/css/lightbox.min.css">
 
         <!--[if IE]>
             <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,21 +29,43 @@
         </footer>
         <nav id="menu" class="body"><ul>
           <li><a href="http://digicreatures.net/">home</a></li>
-            <li><a href="http://digicreatures.net/models/">models</a></li>
+            <li class="active"><a href="http://digicreatures.net/models/">models</a></li>
         </ul></nav>
-<section id="content" class="body home">
-  <section id="intro">
-<p>I used to write code but I found another way to be creative with a computer.
-My name is David Gayerie and this is me sharing my 3D works.</p>
-
-<p>Feel free to add comments on my articles or send me
-a message at<br>
-<span class="obfuscemail">digicreatures.net</span></p>
-<script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e,n){for(var r=document.getElementsByClassName("obfuscemail"),t=0;t<r.length;t++){var a=r[t],o=document.createElement("a");o.href="mailto:"+e,o.innerHTML=n,a.parentNode.replaceChild(o,a)}}(e("qnivq@qvtvperngherf.arg"),e("qnivq@qvtvperngherf.arg"))}();</script>  </section>
-<section class="category">
-  <header>
-    <h2>Latest models</h2>
+<section id="content" class="body article">
+  <img class="cover" src="http://digicreatures.net/photos/mourner/covert.jpg" alt="The mourner thumbnail">  <header>
+    <h1 class="entry-title">
+      <a href="http://digicreatures.net/models/the-mourner.html" rel="bookmark"
+         title="Permalink to The mourner">The mourner</a></h1>
   </header>
+  <footer class="post-info">
+    <time class="published" datetime="2016-12-19T12:00:00+01:00">
+      Mon 19 December 2016
+    </time>
+    <address class="vcard author">By
+        <span class="fn">David Gayerie</span>
+    </address>
+  </footer><!-- /.post-info -->
+
+  <div class="entry-content">
+    <p>While I wanted to learn to sculpt draperies in Blender, I discovered <a class="reference external" href="https://en.wikipedia.org/wiki/Claus_Sluter">Claus Sluter</a>,
+a Dutch sculptor who worked for the Duke of Burgundy in France during the late 1390's. He realized with his nephew <a class="reference external" href="https://en.wikipedia.org/wiki/Mourners_of_Dijon">the mourners
+of Dijon</a> made of albaster. Some of them are entirely covered with fabrics
+and it inspired me this sculpture.</p>
+<a href="http://digicreatures.net/photos/mourner/mourner.jpg" data-lightbox="mourner"><img alt="The mourner created with Blender and Cycles" src="http://digicreatures.net/photos/mourner/mournert.jpg" /></a>
+<p>Of course, I didn't succeed in achieving the same finess as the original ones. So I chose to use clay material for the render
+to suggest an unfinished work.</p>
+<div class="images docutils container">
+<a href="http://digicreatures.net/photos/mourner/mourner_ogl1.jpg" data-lightbox="mourner"><img alt="The mourner viewport preview" src="http://digicreatures.net/photos/mourner/mourner_ogl1t.jpg" /></a>
+<a href="http://digicreatures.net/photos/mourner/mourner_ogl2.jpg" data-lightbox="mourner"><img alt="The mourner viewport preview" src="http://digicreatures.net/photos/mourner/mourner_ogl2t.jpg" /></a>
+<a href="http://digicreatures.net/photos/mourner/mourner_ogl3.jpg" data-lightbox="mourner"><img alt="The mourner viewport preview" src="http://digicreatures.net/photos/mourner/mourner_ogl3t.jpg" /></a>
+</div>
+
+  </div><!-- /.entry-content -->
+</section>
+<section id="content" class="home category">    <section class="category">
+      <header>
+        <h2>Other digiCreatures models</h2>
+      </header>
 <article class="hentry">
   <a href="http://digicreatures.net/models/la-sphinge.html" rel="bookmark" title="Permalink to La Sphinge">
     <img class="cover" src="http://digicreatures.net/photos/la_sphinge/covert.jpg" alt="La Sphinge thumbnail">
@@ -100,8 +126,24 @@ a message at<br>
       </header>
     </div>
   </a>
-</article></section>
-</section>
+</article>    </section></section>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://digicreatures.net/theme/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+    })
+</script>
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://digicreatures-net.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
     <script type="text/javascript">
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
