@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta name="keywords" content="3D,CG,3D generalist,Blender,Cycles,Rigging,Shading,Animation,Rendering,Krita,Gimp,Open source,Linux,David Gayerie,node,normal map,bake" />
+        <meta name="authors" content="David Gayerie" />
+        <title>digiCreatures - Baking normal from your material in Cycles</title>
+        <link rel="stylesheet" href="http://digicreatures.net/theme/css/normalize.css" />
+        <link rel="stylesheet" href="http://digicreatures.net/theme/css/main.css" />
+        <meta charset="utf-8" />
+        <link href="http://digicreatures.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="digiCreatures Full Atom Feed" />
+        <link href="http://digicreatures.net/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate" title="digiCreatures Categories Atom Feed" />
+
+  <meta name="description" content="Baking normal from your material in Cycles - a useful node for baking normal correctly" />
+  <link rel="stylesheet" href="http://digicreatures.net/theme/css/lightbox.min.css">
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+<body>
+  <header id="banner">
+    <a href="http://digicreatures.net/">digiCreatures <span class="subtitle"></span></a>
+  </header>
+  <nav id="menu"><ul>
+    <li><a href="http://digicreatures.net/">home</a></li>
+      <li class="active"><a href="http://digicreatures.net/articles/">articles</a></li>
+      <li><a href="http://digicreatures.net/models/">models</a></li>
+  </ul></nav>
+<section id="content" class="article">
+  <header>
+    <div>
+      <h1 class="entry-title"><a href="http://digicreatures.net/articles/cycles-normal-baking.html" rel="bookmark" title="Permalink to Baking normal from your material in Cycles">Baking normal from your material in Cycles</a></h1>
+      <p class="first last">a useful node for baking normal correctly</p>
+
+    </div>    <img class="cover" src="http://digicreatures.net/photos/full_normal_baking/covert.jpg" alt="Baking normal from your material in Cycles thumbnail">  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2017-05-11T12:00:00+02:00">
+      Thu 11 May 2017
+    </time>
+    <address class="vcard author">By
+        <span class="fn">David Gayerie</span>
+    </address>
+  </footer>
+  <div class="entry-content">
+    <div class="admonition admonition-dowloadable-file">
+<p class="first admonition-title">Dowloadable file</p>
+<p><a class="reference external" href="http://digicreatures.net/resources/normal_to_map.blend">normal_to_map.blend</a></p>
+<p class="last">This file contains the <em>normal to map</em> node for Cycles.</p>
+</div>
+<p>If you have ever tried to bake normals in <a class="reference external" href="http://www.blender.org">Blender</a> using Cycles
+render engine, you probably noticed the following behavior:
+the bake process uses only information from the mesh geometry and ignores normal variations
+created by your material. It means that if you use normal map and/or bump map, they are not taken
+into account.</p>
+<p>If we think about it, it should not be really surprising: as Cycles is based on a nodal system,
+we can create materials with infinite combinations, we can even use one normal map for diffuse shader and another for glossy shader.
+It provides complete artistic freedom... but this also means Cycles cannot identify which part of your material is related
+to normal computation. So the bake tool has no other option than completely ignores effects created by your material when you choose
+<em>normal</em> for as the baking type.</p>
+<p>Too much freedom leads sometime to frustrating limitation! Actually, baking normals including material
+effects is really useful for at least two reasons:</p>
+<ul class="simple">
+<li>If you use a normal map to catch details from a high resolution model and a bump map to paint additional
+details, you probably combine them in your Cycles material. But if you want to export your model
+in other render engines, some of them (especially real time renderers) allow to use either normal
+map or bump map but not both of them. You shoudn't have to choose between one map or another...</li>
+<li>If you use high resolution textures, it could be interesting to merge information from normal map,
+bump map and procedural normal textures into a single normal map to reduce memory footprint and simplify your material.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The <em>Material Output</em> node in Cycles has the <em>Displacement</em> dedicated slot. If you use this slot in your material
+it deactivates all <em>Normal</em> slot from all nodes. But as it also clearly indicates to Cycles how your material
+is affecting the geometry, then the effect of the displacement will be included in the bake process.</p>
+</div>
+<p>Even if it is not straighforward, you can actually create normal map including effects from your material
+in Cycles. I found several ways to achieve that. All of them, as far as I can judge,
+are mathematically correct (otherwise the final normal map would create slightly different effect
+than the original material). From my perspective, the most effective way was to create a special
+node in Cycles. I called it <em>normal to map</em>. In this article, I will explain how to use it
+and the maths foundations behind it.</p>
+<p>If you just want to use the <em>normal to map</em> node, you can <a class="reference external" href="http://digicreatures.net/resources/normal_to_map.blend">download the blend file</a>.
+The file contains a very simple example and the node itself.
+This file is licensed under <a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a>
+so you can freely use this node for your own creation.</p>
+<p>For the rest of this article, I assume that you are familiar with Blender, Cycles and the baking tool in Blender.</p>
+<div class="section" id="how-to-use-normal-to-map-node">
+<h2>How to use <em>normal to map</em> node</h2>
+<p>The <em>normal to map</em> node is designed to be used when you want to bake normal information from your material
+in Cycles. So you should add it just before the baking process and remove it from your material afterward.</p>
+<div class="figure">
+<a href="http://digicreatures.net/photos/full_normal_baking/material_with_normal_to_map_node.jpg" data-lightbox="full_normal_baking"><img alt="Material using the normal to map node" src="http://digicreatures.net/photos/full_normal_baking/material_with_normal_to_map_nodet.jpg" /></a>
+<p class="caption">Material using the <em>normal to map</em> node</p>
+</div>
+<p>The input slot <em>Normal</em> expects the same input as standard BSDF nodes and it is the normal you want to bake.
+There are two output slots: <em>sRGB color</em> and <em>Non-color</em>. <strong>You must use the same output as the color space of
+your baking texture</strong>. By default, Blender creates a texture in sRGB color space.</p>
+<p>I encourage you to use the <em>Non-Color</em> format: less computation is required (no gamma correction applied)
+so it may prevent rounding issues during computation. You can change color space of your texture in the
+properties panel in the UV/image editor.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">For people using the Filmic Blender color management, <em>sRGB</em> is labeled <em>sRGB EOTF</em> and <em>Non-color</em> is labeled <em>Non-Colour Data</em>.</p>
+</div>
+<div class="figure">
+<a href="http://digicreatures.net/photos/full_normal_baking/texture_color_space.jpg" data-lightbox="full_normal_baking"><img alt="Texture color space in the UV/image editor" src="http://digicreatures.net/photos/full_normal_baking/texture_color_spacet.jpg" /></a>
+<p class="caption">Texture color space in the UV/image editor</p>
+</div>
+<p>Usage of this node follows these steps:</p>
+<ol class="arabic simple">
+<li>add the 'normal to map' node to your material</li>
+<li>plug in normal you want to bake to the input socket</li>
+<li>plug the chosen output slot to an Emission node (ctrl+shift+left click if you use the Node Wrangler addon)</li>
+<li>in the UV/image editor create a new image</li>
+<li>in the properties panel of the UV/image editor choose the same color space as the output socket</li>
+<li>add a texture node in your material and select the newly created image</li>
+<li>in the bake tool, select the type 'Emit'</li>
+<li>click the bake button</li>
+</ol>
+<div class="figure">
+<a href="http://digicreatures.net/photos/full_normal_baking/normal_to_map_steps.jpg" data-lightbox="full_normal_baking"><img alt="Preview of all necessary steps" src="http://digicreatures.net/photos/full_normal_baking/normal_to_map_stepst.jpg" /></a>
+<p class="caption">Preview of all necessary steps</p>
+</div>
+<p>The node creates the appropriate colors to represent the normal information. So you must use an emission
+shader as if the object would <em>emit</em> normal information. As pure emission material is not affected by
+fireflies and light bouncing, you can use only one sample for rendering. It means that the baking
+process is super fast!</p>
+</div>
+
+  </div>
+</section><section class="category banner">
+  <header>
+    <h2>digiCreatures models</h2>
+  </header>
+<article class="hentry">
+  <a href="http://digicreatures.net/models/la-sphinge.html" rel="bookmark" title="Permalink to La Sphinge">
+    <img class="cover" src="http://digicreatures.net/photos/la_sphinge/covert.jpg" alt="La Sphinge thumbnail">
+    <div class="article-content">
+      <header>
+        <h2 class="entry-title">La Sphinge</h2>
+      </header>
+      <div class="entry-summary">
+        <p class="first last">a personal vision of the mythological creature</p>
+
+      </div>
+    </div>
+    <footer class="post-info">
+        <time class="published" datetime="2017-04-25T20:00:00+02:00">Tue 25 April 2017</time>
+        <address class="vcard author">By <span class="fn">David Gayerie</span> </address>
+    </footer>
+  </a>
+</article><article class="hentry">
+  <a href="http://digicreatures.net/models/the-batmobile.html" rel="bookmark" title="Permalink to The Batmobile">
+    <img class="cover" src="http://digicreatures.net/photos/batmobile_1989/covert.jpg" alt="The Batmobile thumbnail">
+    <div class="article-content">
+      <header>
+        <h2 class="entry-title">The Batmobile</h2>
+      </header>
+      <div class="entry-summary">
+        <p class="first last">from the 1989 Tim Burton's movie</p>
+
+      </div>
+    </div>
+    <footer class="post-info">
+        <time class="published" datetime="2017-02-26T12:00:00+01:00">Sun 26 February 2017</time>
+        <address class="vcard author">By <span class="fn">David Gayerie</span> </address>
+    </footer>
+  </a>
+</article><article class="hentry">
+  <a href="http://digicreatures.net/models/human-topology.html" rel="bookmark" title="Permalink to Human topology">
+    <img class="cover" src="http://digicreatures.net/photos/human_topology/covert.jpg" alt="Human topology thumbnail">
+    <div class="article-content">
+      <header>
+        <h2 class="entry-title">Human topology</h2>
+      </header>
+      <div class="entry-summary">
+        <p class="first last">sculpt and retopology of a human body</p>
+
+      </div>
+    </div>
+    <footer class="post-info">
+        <time class="published" datetime="2017-02-22T20:00:00+01:00">Wed 22 February 2017</time>
+        <address class="vcard author">By <span class="fn">David Gayerie</span> </address>
+    </footer>
+  </a>
+</article><article>
+  <a href="http://digicreatures.net/models/">
+    <img class="cover" src="http://digicreatures.net/theme/images/placeholder.png" alt="">
+    <div class="article-content">
+      <header>
+        <h2>See all models</h2>
+      </header>
+    </div>
+  </a>
+</article></section><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://digicreatures.net/theme/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+    })
+</script>
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://digicreatures-net.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+  <footer id="contentinfo">
+    <p>Contact: <span class="obfuscemail">digicreatures.net</span></p>
+    <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e,n){for(var r=document.getElementsByClassName("obfuscemail"),t=0;t<r.length;t++){var a=r[t],o=document.createElement("a");o.href="mailto:"+e,o.innerHTML=n,a.parentNode.replaceChild(o,a)}}(e("qnivq@qvtvperngherf.arg"),e("qnivq@qvtvperngherf.arg"))}();</script>
+    <p><q>Hic sunt Leones</q></p>
+  </footer>
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-99071053-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>
