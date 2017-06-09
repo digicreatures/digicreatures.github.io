@@ -417,11 +417,11 @@ div.images, div.figure {
   border-color: #C7A317;
 }
 
-.admonition-dowloadable-file .admonition-title {
+.admonition-downloadable-file .admonition-title {
   display: block;
 }
 
-.admonition-dowloadable-file {
+.admonition-downloadable-file {
   display: block;
   float: right;
   min-width: 33%;

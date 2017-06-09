@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>digiCreatures</title><link href="http://digicreatures.net/" rel="alternate"></link><link href="http://digicreatures.net/feeds/all.atom.xml" rel="self"></link><id>http://digicreatures.net/</id><updated>2017-05-11T12:00:00+02:00</updated><entry><title>Baking normal from your material in Cycles</title><link href="http://digicreatures.net/articles/cycles-normal-baking.html" rel="alternate"></link><published>2017-05-11T12:00:00+02:00</published><updated>2017-05-11T12:00:00+02:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-05-11:/articles/cycles-normal-baking.html</id><summary type="html">&lt;p class="first last"&gt;a useful node for baking normal correctly&lt;/p&gt;
-</summary><content type="html">&lt;div class="admonition admonition-dowloadable-file"&gt;
-&lt;p class="first admonition-title"&gt;Dowloadable file&lt;/p&gt;
+</summary><content type="html">&lt;div class="admonition admonition-downloadable-file"&gt;
+&lt;p class="first admonition-title"&gt;Downloadable file&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://digicreatures.net/resources/normal_to_map.blend"&gt;normal_to_map.blend&lt;/a&gt;&lt;/p&gt;
 &lt;p class="last"&gt;This file contains the &lt;em&gt;normal to map&lt;/em&gt; node for Cycles.&lt;/p&gt;
 &lt;/div&gt;
