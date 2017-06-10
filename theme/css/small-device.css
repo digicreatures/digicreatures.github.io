@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body {
+  font-size: 18pt;
+}
+
+a[data-lightbox]>img {
+  max-width: 95%;
+}
+
+.entry-content {
+  margin-right: 1em;
+}
+
+.entry-content h2 {
+  margin-right: -1em;
+}
+
+.category {
+  max-width: 630px;
+}
