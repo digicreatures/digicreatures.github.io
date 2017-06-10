@@ -11,7 +11,7 @@ body {
   background: white;
   height: 100%;
   font-family: 'NTR', sans-serif;
-  font-size: 13pt;
+  font-size: 14pt;
   margin-bottom: 16em;
 }
 
@@ -24,6 +24,10 @@ body>section {
 
 q {
   font-style: italic;
+}
+
+ul {
+  list-style: square;
 }
 
 /* unvisited link */
@@ -79,12 +83,30 @@ a[data-lightbox]>img {
   border-left-width: 16px;
   border-right-width: 16px;
   border-radius: 3px;
-}
-
-img {
   background-color: gray;
   color: #dcdcdc;
-  font-size: 75%;
+}
+
+table {
+  border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 90%;
+	text-align: left;
+	margin-bottom: 1em;
+}
+
+thead {
+  background-color: black;
+  color: #dcdcdc;
+}
+
+tbody tr:nth-child(even) {
+	background: rgb(233, 233, 233);
+}
+
+td, th {
+  padding: 0.3em;
 }
 
 .figure {
@@ -100,6 +122,10 @@ img {
 
 div.images a[data-lightbox], div.figure a[data-lightbox] {
   display: inline;
+}
+
+div.images div.figure {
+  display: inline-block;
 }
 
 div.images, div.figure {
@@ -357,29 +383,32 @@ div.images, div.figure {
 
 .article .entry-content{
   margin: 0 auto;
-  max-width: 60em;
+  max-width: 1050px;
+}
+
+.article .entry-content {
+  text-align: justify;
 }
 
 .article .entry-content p {
   padding-left: 2em;
-  text-align: justify;
 }
 
 .article .entry-content ol {
   padding-left: 4em;
-  text-align: justify;
 }
 
 .article .entry-content ul {
   padding-left: 4em;
-  text-align: justify;
+}
+
+.article .entry-content .formula {
+  text-align: center;
 }
 
 .article .entry-content h2 {
   background-color: rgb(90,90,90);
   padding:1em;
-  margin-left:-1em;
-  margin-right:-1em;
   font-size: 90%;
 }
 

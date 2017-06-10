@@ -14,18 +14,20 @@ His vision was definitely more fiendish than mine.&lt;/p&gt;
 &lt;p&gt;I also uploaded a simplified version on Sketchfab:&lt;/p&gt;
 
 &lt;div class="sketchfab-viewer "&gt;
-    &lt;iframe width="900" height="530" src="https://sketchfab.com/models/aaa58f36bfaf46c6a6de6647489ebd47/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""&gt;&lt;/iframe&gt;
+    &lt;iframe width="710" height="430" src="https://sketchfab.com/models/aaa58f36bfaf46c6a6de6647489ebd47/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""&gt;&lt;/iframe&gt;
 &lt;/div&gt;</content><category term="creature"></category><category term="character"></category><category term="sphinge"></category><category term="sketchfab"></category><category term="sculpt"></category></entry><entry><title>The Batmobile</title><link href="http://digicreatures.net/models/the-batmobile.html" rel="alternate"></link><published>2017-02-26T12:00:00+01:00</published><updated>2017-02-26T12:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-02-26:/models/the-batmobile.html</id><summary type="html">&lt;p class="first last"&gt;from the 1989 Tim Burton's movie&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Car modeling is by no doubt a good way to improve hard surface modeling skills. But I really don't care about cars!
 I don't even have a car! After a while, it appeared to me the only car I could find an interest in was the Batmobile designed
 by Anton Furst for &lt;a class="reference external" href="https://www.youtube.com/watch?v=we_eTOeNSEE"&gt;Tim Burton's movie in 1989&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_001.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: front view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_001t.jpg" /&gt;&lt;/a&gt;
 &lt;p&gt;Luckily, I found out websites with many shots of this car and even blueprints created by fans who built their
 own version! I also discovered that the car is in fact pretty bulky. You don't have this impression watching
 the movie because the first time you see it, it is shot wide-angle. So I used the same trick for my renders.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_001.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: front view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_001t.jpg" /&gt;&lt;/a&gt;
 &lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_002.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: side view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_002t.jpg" /&gt;&lt;/a&gt;
-&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_003.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: rear view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_003t.jpg" /&gt;&lt;/a&gt;
+&lt;div class="images docutils container"&gt;
 &lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_004.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: front view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_004t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_003.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: rear view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_003t.jpg" /&gt;&lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;I did not use any particular trick for modeling. All the stuff was about extruding and moving vertices in Blender. I also used a polish brush
 in sculpt mode to flatten the car body.&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_white.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: plastic view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_whitet.jpg" /&gt;&lt;/a&gt;

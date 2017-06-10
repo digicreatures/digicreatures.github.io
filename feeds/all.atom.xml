@@ -14,8 +14,8 @@ into account.&lt;/p&gt;
 we can create materials with infinite combinations, we can even use one normal map for diffuse shader and another for glossy shader.
 It provides complete artistic freedom... but this also means Cycles cannot identify which part of your material is related
 to normal computation. So the bake tool has no other option than completely ignores effects created by your material when you choose
-&lt;em&gt;normal&lt;/em&gt; for as the baking type.&lt;/p&gt;
-&lt;p&gt;Too much freedom leads sometime to frustrating limitation! Actually, baking normals including material
+&lt;em&gt;normal&lt;/em&gt; as the bake type.&lt;/p&gt;
+&lt;p&gt;Too much freedom leads sometime to frustrating limitations! Actually, baking normals including material
 effects is really useful for at least two reasons:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;If you use a normal map to catch details from a high resolution model and a bump map to paint additional
@@ -36,12 +36,12 @@ in Cycles. I found several ways to achieve that. All of them, as far as I can ju
 are mathematically correct (otherwise the final normal map would create slightly different effect
 than the original material). From my perspective, the most effective way was to create a special
 node in Cycles. I called it &lt;em&gt;normal to map&lt;/em&gt;. In this article, I will explain how to use it
-and the maths foundations behind it.&lt;/p&gt;
+and the math foundations behind it.&lt;/p&gt;
 &lt;p&gt;If you just want to use the &lt;em&gt;normal to map&lt;/em&gt; node, you can &lt;a class="reference external" href="http://digicreatures.net/resources/normal_to_map.blend"&gt;download the blend file&lt;/a&gt;.
 The file contains a very simple example and the node itself.
 This file is licensed under &lt;a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/"&gt;CC0 1.0 Universal&lt;/a&gt;
-so you can freely use this node for your own creation.&lt;/p&gt;
-&lt;p&gt;For the rest of this article, I assume that you are familiar with Blender, Cycles and the baking tool in Blender.&lt;/p&gt;
+so you can freely use this node for your own purpose.&lt;/p&gt;
+&lt;p&gt;For the rest of this article, I assume that you are familiar with Blender, Cycles and the bake tool in Blender.&lt;/p&gt;
 &lt;div class="section" id="how-to-use-normal-to-map-node"&gt;
 &lt;h2&gt;How to use &lt;em&gt;normal to map&lt;/em&gt; node&lt;/h2&gt;
 &lt;p&gt;The &lt;em&gt;normal to map&lt;/em&gt; node is designed to be used when you want to bake normal information from your material
@@ -54,23 +54,23 @@ in Cycles. So you should add it just before the baking process and remove it fro
 There are two output slots: &lt;em&gt;sRGB color&lt;/em&gt; and &lt;em&gt;Non-color&lt;/em&gt;. &lt;strong&gt;You must use the same output as the color space of
 your baking texture&lt;/strong&gt;. By default, Blender creates a texture in sRGB color space.&lt;/p&gt;
 &lt;p&gt;I encourage you to use the &lt;em&gt;Non-Color&lt;/em&gt; format: less computation is required (no gamma correction applied)
-so it may prevent rounding issues during computation. You can change color space of your texture in the
+so it should avoid some rounding issues during computation. You can change color space of your texture in the
 properties panel in the UV/image editor.&lt;/p&gt;
-&lt;div class="admonition tip"&gt;
-&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
-&lt;p class="last"&gt;For people using the Filmic Blender color management, &lt;em&gt;sRGB&lt;/em&gt; is labeled &lt;em&gt;sRGB EOTF&lt;/em&gt; and &lt;em&gt;Non-color&lt;/em&gt; is labeled &lt;em&gt;Non-Colour Data&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;
 &lt;div class="figure"&gt;
 &lt;a href="http://digicreatures.net/photos/full_normal_baking/texture_color_space.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Texture color space in the UV/image editor" src="http://digicreatures.net/photos/full_normal_baking/texture_color_spacet.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Texture color space in the UV/image editor&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class="admonition tip"&gt;
+&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;p class="last"&gt;For people using the Filmic Blender color management, &lt;em&gt;sRGB&lt;/em&gt; is labeled &lt;em&gt;sRGB EOTF&lt;/em&gt; and &lt;em&gt;Non-color&lt;/em&gt; is labeled &lt;em&gt;Non-Colour Data&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;Usage of this node follows these steps:&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;add the 'normal to map' node to your material&lt;/li&gt;
-&lt;li&gt;plug in normal you want to bake to the input socket&lt;/li&gt;
+&lt;li&gt;plug in the normal you want to bake to the input socket&lt;/li&gt;
 &lt;li&gt;plug the chosen output slot to an Emission node (ctrl+shift+left click if you use the Node Wrangler addon)&lt;/li&gt;
-&lt;li&gt;in the UV/image editor create a new image&lt;/li&gt;
-&lt;li&gt;in the properties panel of the UV/image editor choose the same color space as the output socket&lt;/li&gt;
+&lt;li&gt;in the UV/image editor, create a new image&lt;/li&gt;
+&lt;li&gt;in the properties panel of the UV/image editor, choose the same color space as the output socket&lt;/li&gt;
 &lt;li&gt;add a texture node in your material and select the newly created image&lt;/li&gt;
 &lt;li&gt;in the bake tool, select the type 'Emit'&lt;/li&gt;
 &lt;li&gt;click the bake button&lt;/li&gt;
@@ -83,6 +83,140 @@ properties panel in the UV/image editor.&lt;/p&gt;
 shader as if the object would &lt;em&gt;emit&lt;/em&gt; normal information. As pure emission material is not affected by
 fireflies and light bouncing, you can use only one sample for rendering. It means that the baking
 process is super fast!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="performance-improvements"&gt;
+&lt;h2&gt;Performance improvements&lt;/h2&gt;
+&lt;p&gt;Creating one normal texture to replace part of a material can provide interesting improvements.
+Consider the images below. For the first one, the material of the body uses a normal map, a bump map
+and a procedural texture to generate additional normal variations. For the second one, I baked the normal
+from the original material using the &lt;em&gt;Normal to map&lt;/em&gt; node. I saved the result in a file and I created a much
+simpler material using the baked normal map.&lt;/p&gt;
+&lt;div class="images docutils container"&gt;
+&lt;div class="figure"&gt;
+&lt;a href="http://digicreatures.net/photos/full_normal_baking/portrait.2000s.16_03.materialbump.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Using the original material" src="http://digicreatures.net/photos/full_normal_baking/portrait.2000s.16_03.materialbumpt.jpg" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Using the original material&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure"&gt;
+&lt;a href="http://digicreatures.net/photos/full_normal_baking/portrait.2000s.13_55.usingnormaltomap.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Using the normal map baked with the Normal to map node" src="http://digicreatures.net/photos/full_normal_baking/portrait.2000s.13_55.usingnormaltomapt.jpg" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Using the normal map baked with the &lt;em&gt;Normal to map&lt;/em&gt; node&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;The following table shows some figures about the renderings:&lt;/p&gt;
+&lt;table border="1" class="colwidths-given docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="50%" /&gt;
+&lt;col width="25%" /&gt;
+&lt;col width="25%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;Material&lt;/th&gt;
+&lt;th class="head"&gt;Rendering time&lt;/th&gt;
+&lt;th class="head"&gt;Memory peak&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;Original material&lt;/td&gt;
+&lt;td&gt;16:03&lt;/td&gt;
+&lt;td&gt;1371 Mo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Material using baked normal&lt;/td&gt;
+&lt;td&gt;13:55&lt;/td&gt;
+&lt;td&gt;350 Mo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For this model, using a simpler material has a real impact on performance!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="known-issues"&gt;
+&lt;h2&gt;Known issues&lt;/h2&gt;
+&lt;p&gt;Due to internal computation, you can get slight variations of the normal computed by the &lt;em&gt;Normal to map&lt;/em&gt;
+node and the original material. As these variations are really subtle there are completely unnoticeable.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Normal to map&lt;/em&gt; node is dramatically affected by rotation and scale of your model. Don't forget
+to apply transformations in Blender before baking.&lt;/p&gt;
+&lt;p&gt;The most annoying issue does not come from the node itself but from the bake process. If you look closely
+at the two images above, they seem to be identical... but they are not! If you open these images into
+separate tabs at full size and switch between them, you will notice a weird effect: some details seem to slip
+over the surface! Look at the image below to see this effect:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="detail of the slip over effect" src="http://digicreatures.net/images/full_normal_baking/portrait_detail_normal_to_map_variation.gif" /&gt;
+&lt;p class="caption"&gt;The &lt;em&gt;slip over&lt;/em&gt; effect between original material and material using the baked texture&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;It took me a day to convince myself this effect was not created by the &lt;em&gt;Normal to map&lt;/em&gt; node!
+Actually, the problem comes from the integration of the bump map into a normal map.
+To summarize, bump map stores height information while normal map stores variation of height.
+It means if a texture contains three pixels to represent a bump map, each pixel represents
+a different height. To achieve the same result with a normal map, the texture must contain at
+least two pixels to encode the variation of height. But most of all, there is a shift between
+the bump map and the normal map.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="shift between bump map and normal map" src="http://digicreatures.net/images/full_normal_baking/bumpmap_vs_normalmap.png" /&gt;
+&lt;p class="caption"&gt;Shift between bump map and normal map&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;So when we want to convert directly or indirectly, bump map info into normal map info, we
+get a shift of information in the final texture. One way to avoid this is to use a
+texture with higher resolution for the final bake. But it is not always desirable.&lt;/p&gt;
+&lt;p&gt;So if you plan to use the &lt;em&gt;Normal to map&lt;/em&gt; node be aware of this effect, especially if you
+want to create close shot of your model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="how-normal-to-map-node-works"&gt;
+&lt;h2&gt;How &lt;em&gt;normal to map&lt;/em&gt; node works&lt;/h2&gt;
+&lt;p&gt;This section covers what happens under the hood. You don't need to understand that part to
+use the node. But if you are interested in the math, let's start with normal map.&lt;/p&gt;
+&lt;p&gt;Obviously, normal map has nothing to do with color! A normal texture
+is an image and we can open it into an image editor. But it is not
+really an image because each pixel (or to be precise each texel) is not a
+color information: it is a normal information.&lt;/p&gt;
+&lt;p&gt;What is a normal? A normal is a vector perpendicular to a surface. Why is it so
+important? Because the normal is used to define what is the front of a face
+and what is the back. More importantly, the normal is used internally in almost any
+shader node. For instance to define how the light bounces over the surface.
+If we can cheat and slightly modify the orientation of the normal over the surface
+we can change the way the light bounces, create fake bumps and simulate non existing geometry.
+This is precisely what normal map is used for.&lt;/p&gt;
+&lt;p&gt;Normal texture stores normal variations considering the original normal coordinates are (0,0,1).
+It means that the coordinates must be in tangent space. And that's the point:
+Cycles provides normal information in world space. In order to bake normal, we
+have to transform normal vectors from world space to tangent space.
+So, we have to do the following operation:&lt;/p&gt;
+&lt;div class="formula"&gt;
+&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ts&lt;/i&gt;&lt;/sub&gt; = &lt;i&gt;M&lt;/i&gt;&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ws&lt;/i&gt;&lt;/sub&gt;
+&lt;/div&gt;
+&lt;p&gt;Where &lt;span class="formula"&gt;&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ws&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt; is the normal vector in world space (the one created by the material),
+&lt;span class="formula"&gt;&lt;i&gt;M&lt;/i&gt;&lt;/span&gt; is the tranform matrix from world space to tangent space and &lt;span class="formula"&gt;&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ts&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt;
+is the normal vector in tangent space (the one we want to get).
+The tranform matrix &lt;span class="formula"&gt;&lt;i&gt;M&lt;/i&gt;&lt;/span&gt; is a 3x3 matrix composed in line by the tangent vector,
+the bitangent vector and the original normal vector of the face:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="transformation matrix" src="http://digicreatures.net/images/full_normal_baking/ws2ts_matrix.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Cycles provides tangent vector and normal vector for the current face. We
+can easily compute bitangent vector as the cross product of normal vector and tangent vector.
+However, Cycles has no support for matrix operation but we can easily decompose the operations:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;img alt="transformation matrix decomposition" src="http://digicreatures.net/images/full_normal_baking/ws2ts_matrix_computation.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;and create the node set to do the math:&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a href="http://digicreatures.net/photos/full_normal_baking/normal_to_map_wstots.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="From world space to tangent space in Cycles" src="http://digicreatures.net/photos/full_normal_baking/normal_to_map_wstotst.jpg" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;From world space to tangent space in Cycles&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;All this could have been much simpler if the
+&lt;a class="reference external" href="https://docs.blender.org/manual/en/dev/render/cycles/nodes/types/vector/transform.html"&gt;Vector Transform&lt;/a&gt;
+node accepts tangent space... could be an interesting improvement.&lt;/p&gt;
+&lt;p&gt;Then we have to encode vector coordinates into color values to create the final normal
+texture. As normal vector is a unit vector x, y and z coordinates are between -1 and 1.
+We have to transform these coordinates to color values between 0 and 1. The
+&lt;a class="reference external" href="https://docs.blender.org/manual/en/dev/render/cycles/nodes/types/vector/curves.html"&gt;Vector Curves&lt;/a&gt;
+node can do the math for us.&lt;/p&gt;
+&lt;div class="figure"&gt;
+&lt;a href="http://digicreatures.net/photos/full_normal_baking/normal_to_map_color_management.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Converting vector to color" src="http://digicreatures.net/photos/full_normal_baking/normal_to_map_color_managementt.jpg" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Converting vector to color&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Finally, sRGB color space means that Blender will apply a gamma correction of 1/2.2 because file formats
+with 8 bits per channel (PNG, JPEG...) must pre encode color values like this. But as normal texture
+does not contain color values but encoded vector coordinates, we must prevent this by applying
+the inverse gamma correction of 2.2. Using a non color space for the bake texture is straightforward because
+we inform Blender we want to use a linear color space (no gamma correction is needed).&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="node"></category><category term="normal map"></category><category term="bake"></category></entry><entry><title>La Sphinge</title><link href="http://digicreatures.net/models/la-sphinge.html" rel="alternate"></link><published>2017-04-25T20:00:00+02:00</published><updated>2017-04-25T20:00:00+02:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-04-25:/models/la-sphinge.html</id><summary type="html">&lt;p class="first last"&gt;a personal vision of the mythological creature&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Sphinge is the French word for female sphinx. From my perspective, it is fundamentally a dual character: fascinating and repelling.
@@ -99,18 +233,20 @@ His vision was definitely more fiendish than mine.&lt;/p&gt;
 &lt;p&gt;I also uploaded a simplified version on Sketchfab:&lt;/p&gt;
 
 &lt;div class="sketchfab-viewer "&gt;
-    &lt;iframe width="900" height="530" src="https://sketchfab.com/models/aaa58f36bfaf46c6a6de6647489ebd47/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""&gt;&lt;/iframe&gt;
+    &lt;iframe width="710" height="430" src="https://sketchfab.com/models/aaa58f36bfaf46c6a6de6647489ebd47/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""&gt;&lt;/iframe&gt;
 &lt;/div&gt;</content><category term="creature"></category><category term="character"></category><category term="sphinge"></category><category term="sketchfab"></category><category term="sculpt"></category></entry><entry><title>The Batmobile</title><link href="http://digicreatures.net/models/the-batmobile.html" rel="alternate"></link><published>2017-02-26T12:00:00+01:00</published><updated>2017-02-26T12:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-02-26:/models/the-batmobile.html</id><summary type="html">&lt;p class="first last"&gt;from the 1989 Tim Burton's movie&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Car modeling is by no doubt a good way to improve hard surface modeling skills. But I really don't care about cars!
 I don't even have a car! After a while, it appeared to me the only car I could find an interest in was the Batmobile designed
 by Anton Furst for &lt;a class="reference external" href="https://www.youtube.com/watch?v=we_eTOeNSEE"&gt;Tim Burton's movie in 1989&lt;/a&gt;.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_001.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: front view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_001t.jpg" /&gt;&lt;/a&gt;
 &lt;p&gt;Luckily, I found out websites with many shots of this car and even blueprints created by fans who built their
 own version! I also discovered that the car is in fact pretty bulky. You don't have this impression watching
 the movie because the first time you see it, it is shot wide-angle. So I used the same trick for my renders.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_001.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: front view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_001t.jpg" /&gt;&lt;/a&gt;
 &lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_002.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: side view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_002t.jpg" /&gt;&lt;/a&gt;
-&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_003.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: rear view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_003t.jpg" /&gt;&lt;/a&gt;
+&lt;div class="images docutils container"&gt;
 &lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_004.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: front view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_004t.jpg" /&gt;&lt;/a&gt;
+&lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_003.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: rear view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_003t.jpg" /&gt;&lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;I did not use any particular trick for modeling. All the stuff was about extruding and moving vertices in Blender. I also used a polish brush
 in sculpt mode to flatten the car body.&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/batmobile_1989/batmobile_white.jpg" data-lightbox="batmobile_1989"&gt;&lt;img alt="The batmobile: plastic view created with Blender and Cycles" src="http://digicreatures.net/photos/batmobile_1989/batmobile_whitet.jpg" /&gt;&lt;/a&gt;
