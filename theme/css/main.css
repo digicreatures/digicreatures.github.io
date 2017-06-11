@@ -15,6 +15,24 @@ body {
   margin-bottom: 16em;
 }
 
+/* for small devices */
+@media all and (max-device-width: 480px) {
+  body {
+    font-size: 19pt;
+  }
+
+  #menu a {
+    font-weight: bolder;
+  }
+
+  .lb-data .lb-close, .lb-data .lb-open {
+    width: 60px;
+    height: 60px;
+    margin-left: 30px;
+    background-size: 60px;
+  }
+}
+
 body>section {
   max-width: 1250px;
   margin-top: 1em;
@@ -61,13 +79,13 @@ a:active {
 h1 {
   font-family: 'Comfortaa', sans-serif;
   font-size: 120%;
-  color: #dcdcdc;
+  color: white;
 }
 
 h2 {
   font-family: 'Comfortaa', sans-serif;
   font-size: 110%;
-  color: #dcdcdc;
+  color: white;
 }
 
 a[data-lightbox] {
@@ -79,12 +97,14 @@ a[data-lightbox] {
 }
 
 a[data-lightbox]>img {
-  border: 10px solid gray;
-  border-left-width: 16px;
-  border-right-width: 16px;
+  max-width: 95%;
+}
+
+a[data-lightbox]>img {
+  border: 7px solid #bbbbbb;
+  background-color: #bbbbbb;
   border-radius: 3px;
-  background-color: gray;
-  color: #dcdcdc;
+  color: white;
 }
 
 table {
@@ -121,7 +141,7 @@ td, th {
 }
 
 div.images a[data-lightbox], div.figure a[data-lightbox] {
-  display: inline;
+  display: inline-block;
 }
 
 div.images div.figure {
@@ -135,9 +155,8 @@ div.images, div.figure {
 .sketchfab-viewer iframe {
   display: block;
   margin: 0 auto;
-  border: 10px solid gray;
-  border-left-width: 16px;
-  border-right-width: 16px;
+  border: 7px solid #bbbbbb;
+  background-color: #bbbbbb;
   border-radius: 3px;
 }
 
@@ -167,7 +186,6 @@ div.images, div.figure {
   top: 0;
   left: 0;
   right: 0;
-  width: 18em;
   height: 2em;
   color: #dcdcdc;
 }
@@ -186,21 +204,29 @@ div.images, div.figure {
 }
 
 #menu a:hover {
-  background-color: grey;
+  background-color: #969696;
+}
+
+div#content {
+  background-color: #969696;
 }
 
 #intro {
-  background-color: rgb(150,150,150);
   background-image: url("../images/face_topology.png");
   background-repeat: no-repeat;
   background-position: right top;
+  background-size: 38%;
   min-height: 350px;
   padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #intro p {
-  margin-right: 500px;
-  margin-left: 2em;
+  margin-right: 38%;
 }
 
 #intro a {
@@ -218,7 +244,7 @@ div.images, div.figure {
   height: 9em;
   width: 100%;
   color: white;
-  background-color: black;
+  background-color: #333333;
 }
 
 #contentinfo a {
@@ -229,6 +255,7 @@ div.images, div.figure {
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
+  padding-right: .5em;
   text-align: right;
 }
 
@@ -239,12 +266,28 @@ div.images, div.figure {
 }
 
 /*category*/
+@media all and (max-width: 1260px) {
+  .category {
+    max-width: 630px;
+  }
+}
+
+@media all and (max-width: 640px) {
+  .category {
+    max-width: 320px;
+  }
+}
+
 .category > header {
   display: table;
   height: 100px;
   width: 100%;
-  background-color: rgb(90,90,90);
+  margin: 0;
   margin-bottom:10px;
+  padding: 0;
+  background-color: #969696;
+  border-radius: 0 0 3px 3px;
+  overflow:hidden;
 }
 
 .category > header h1 {
@@ -314,7 +357,9 @@ div.images, div.figure {
 }
 
 .banner {
-  background-color: gray;
+  background-color: #bbbbbb;
+  border-radius: 3px;
+  overflow:hidden;
 }
 
 .banner > header {
@@ -337,11 +382,13 @@ div.images, div.figure {
 
 .article header {
   display: table;
-  background-color: rgb(90,90,90);
+  width: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
-  color: #dcdcdc;
+  background-color: #969696;
+  color: white;
+  border-radius: 0 0 3px 3px;
+  overflow:hidden;
 }
 
 .article header div {
@@ -371,7 +418,7 @@ div.images, div.figure {
 }
 
 .article .entry-title a {
-  color: inherit;
+  color: white;
 }
 
 .article header img.cover {
@@ -393,14 +440,17 @@ div.images, div.figure {
 
 .article .entry-content p {
   padding-left: 2em;
+  padding-right: 1em;
 }
 
 .article .entry-content ol {
   padding-left: 4em;
+  padding-right: 1em;
 }
 
 .article .entry-content ul {
   padding-left: 4em;
+  padding-right: 1em;
 }
 
 .article .entry-content .formula {
@@ -408,9 +458,10 @@ div.images, div.figure {
 }
 
 .article .entry-content h2 {
-  background-color: rgb(90,90,90);
+  background-color: #969696;
   padding:1em;
   font-size: 90%;
+  border-radius: 3px 3px 0 0;
 }
 
 .article header h2 a {
@@ -425,12 +476,13 @@ div.images, div.figure {
 }
 
 .admonition {
-  border: 1px solid black;
+  border: 1px solid #333333;
   border-top-width: 1em;
-  margin:0;
+  margin: 1em;
   padding: 1em;
-  margin-left: 4em;
-  margin-right: auto;
+  margin-left: auto;
+  margin-right: 1em;
+  max-width: 85%;
   font-size: 85%;
 }
 
@@ -454,11 +506,10 @@ div.images, div.figure {
 .admonition-downloadable-file {
   display: block;
   float: right;
+  margin-left: 2em;
   min-width: 33%;
   background-image: url("../images/downloadable_file.png");
   background-repeat: no-repeat;
   background-position: 10px;
   padding-left: 55px;
-  margin-left: 1em;
-  margin-bottom: 1em;
 }
