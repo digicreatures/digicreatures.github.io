@@ -211,13 +211,13 @@ div#content {
   background-color: #969696;
 }
 
-#intro {
+.info-block {
   background-image: url("../images/face_topology.png");
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 38%;
   min-height: 350px;
-  padding-top: 2em;
+  padding-top: 35px;
   padding-left: 1em;
   padding-right: 1em;
   max-width: 1200px;
@@ -225,12 +225,25 @@ div#content {
   margin-right: auto;
 }
 
-#intro p {
+#imprint {
+  padding-top: 5px;
+  min-height: 380px;
+}
+
+.info-block p {
   margin-right: 38%;
 }
 
-#intro a {
+.info-block a {
   color: inherit;
+}
+
+#imprint address {
+  padding-left: 6em;
+}
+
+#imprint address .fn {
+  font-size: 150%;
 }
 
 #content {
@@ -255,6 +268,7 @@ div#content {
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: .5em;
   padding-right: .5em;
   text-align: right;
 }
