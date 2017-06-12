@@ -15,28 +15,6 @@ body {
   margin-bottom: 16em;
 }
 
-/* for small devices */
-@media all and (max-device-width: 480px) {
-  body {
-    font-size: 22pt;
-  }
-
-  .entry-summary {
-    display: none;
-  }
-
-  #menu a {
-    font-weight: bolder;
-  }
-
-  .lb-data .lb-close, .lb-data .lb-open {
-    width: 60px;
-    height: 60px;
-    margin-left: 30px;
-    background-size: 60px;
-  }
-}
-
 body>section {
   max-width: 1250px;
   margin-top: 1em;
@@ -101,7 +79,7 @@ a[data-lightbox] {
 }
 
 a[data-lightbox]>img {
-  max-width: 95%;
+  max-width: 90%;
 }
 
 a[data-lightbox]>img {
@@ -162,6 +140,7 @@ div.images, div.figure {
   border: 7px solid #bbbbbb;
   background-color: #bbbbbb;
   border-radius: 3px;
+  max-width: 90%
 }
 
 #banner {
@@ -530,4 +509,49 @@ div#content {
   background-repeat: no-repeat;
   background-position: 10px;
   padding-left: 55px;
+}
+
+/* for small devices */
+@media all and (max-device-width: 600px) {
+
+  #banner {
+    padding-left: 0.2em;
+    font-size: 50%;
+    padding-bottom: 2.2em;
+  }
+
+  #menu {
+    text-align: right;
+  }
+
+  #menu li {
+    width: 4em;
+  }
+
+  .info-block {
+    background-size: 100%;
+    background-position: 120px -40px;
+    color: white;
+    min-height: inherit;
+    padding: 1em;
+  }
+
+  .info-block p {
+    margin-right: 0;
+  }
+
+  #imprint {
+    padding: 1em;
+    min-height: inherit;
+  }
+
+  #imprint address {
+    padding-left: 1em;
+  }
+
+  .article header img.cover {
+    width: 100px;
+    height: 100px;
+  }
+
 }
