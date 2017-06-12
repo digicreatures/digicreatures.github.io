@@ -11,14 +11,14 @@ body {
   background: white;
   height: 100%;
   font-family: 'NTR', sans-serif;
-  font-size: 14pt;
+  font-size: 1.1em;
   margin-bottom: 16em;
 }
 
 /* for small devices */
 @media all and (max-device-width: 480px) {
-  body {
-    font-size: 19pt;
+  .entry-summary {
+    display: none;
   }
 
   #menu a {
