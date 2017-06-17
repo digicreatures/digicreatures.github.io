@@ -465,8 +465,36 @@ div#content {
   color: inherit;
 }
 
+.social {
+  display: inline-block;
+  float: left;
+  padding: .5em;
+  margin: .1em;
+  text-align: right;
+  border-radius: 3px;
+}
+
+a.social {
+  color: white !important;
+}
+
+.social .logo {
+  padding-left: .3em;
+  width: 1.2em;
+  vertical-align: top;
+}
+
+.facebook {
+  background-color: #2d5f9a;
+}
+
+.twitter {
+  background-color: #00c3f3;
+}
+
 .post-info {
   margin-top: .1em;
+  margin-bottom: 2.5em;
   font-size: 70%;
   width: 100%;
   text-align: right;
