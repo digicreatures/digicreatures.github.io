@@ -34,8 +34,8 @@
 
     </div>    <img class="cover" src="http://digicreatures.net/photos/batmobile_1989/covert.jpg" alt="The Batmobile thumbnail">  </header>
   <div class="share">
-    <a class="social facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdigicreatures.net%2Fmodels%2Fthe-batmobile.html" rel="nofollow">share <img class="logo" src="http://digicreatures.net/theme/images/facebook.png" alt="on facebook" title="you like it... share it"/></a>
-    <a class="social twitter" target="_blank" href="https://twitter.com/intent/tweet?text=The%20Batmobile&amp;url=http%3A%2F%2Fdigicreatures.net%2Fmodels%2Fthe-batmobile.html&amp;via=digicreatures" rel="nofollow">share <img class="logo" src="http://digicreatures.net/theme/images/twitter.png" alt="on twitter" title="you like it... share it"/></a>
+    <a id="sof" class="social facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdigicreatures.net%2Fmodels%2Fthe-batmobile.html" rel="nofollow">share <img class="logo" src="http://digicreatures.net/theme/images/facebook.png" alt="on facebook" title="you like it... share it"/></a>
+    <a id="sot" class="social twitter" target="_blank" href="https://twitter.com/intent/tweet?text=The%20Batmobile&amp;url=http%3A%2F%2Fdigicreatures.net%2Fmodels%2Fthe-batmobile.html&amp;via=digicreatures" rel="nofollow">share <img class="logo" src="http://digicreatures.net/theme/images/twitter.png" alt="on twitter" title="you like it... share it"/></a>
   </div>
   <footer class="post-info">
     <time class="published" datetime="2017-02-26T12:00:00+01:00">
@@ -159,9 +159,13 @@ s.setAttribute('data-timestamp', +new Date());
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-99071053-1', 'auto');
     ga('send', 'pageview');
+    function gasocialevent(id, label) {
+      var e = document.getElementById(id);
+      if (e) e.addEventListener('click',function(){ga('send','event','Social','share',label)});
+    }
+    gasocialevent('sof','facebook');gasocialevent('sot','twitter');
     </script>
 </body>
 </html>
