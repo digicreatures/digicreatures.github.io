@@ -147,16 +147,20 @@ div.images, div.figure {
   position: fixed;
   z-index: 100;
   top: 0;
-  right: 0;
   left: 0;
+  right: 0;
   height: 2em;
   padding-top: .2em;
-  padding-left: 18em;
   background-color: black;
   color: #dcdcdc;
 }
 
-#banner a {
+#banner span {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  max-width: 1250px;
   font-family: 'Comfortaa', sans-serif;
   font-size: 200%;
   font-style: italic;
@@ -167,27 +171,38 @@ div.images, div.figure {
   position: fixed;
   z-index: 110;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 2em;
+  width: 100%;
   color: #dcdcdc;
+}
+
+#menu ul {
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+  text-align: right;
+  max-width: 1250px;
 }
 
 #menu li {
   display: inline-block;
-  width: 5em;
-  font-variant: small-caps;
 }
 
 #menu a {
+  font-variant: small-caps;
+  padding-top: 1em;
+  padding-bottom: .2em;
+  height: 1em;
   color: inherit;
   display: block;
+  width: 5em;
   text-align: center;
-  transition: background-color, .5s;
+  font-weight: normal;
+  transition: background-color, color, .8s;
 }
 
 #menu a:hover {
-  background-color: #969696;
+  background-color: #dcdcdc;
+  color:black;
 }
 
 div#content {
@@ -325,7 +340,7 @@ div#content {
   min-height: 105px;
   max-height: 130px;
   width: 280px;
-  transition: opacity, .5s;
+  transition: opacity, .8s;
   font-size: 95%
 }
 
@@ -541,14 +556,6 @@ a.social {
 
 /* for small devices */
 @media all and (max-device-width: 800px) {
-  #banner {
-    padding-left: 15em;
-  }
-
-  #menu li {
-    width: 4em;
-  }
-
   .info-block {
     min-height: inherit;
     padding: 1em;
@@ -560,16 +567,10 @@ a.social {
   }
 }
 
-@media all and (max-device-width: 500px) {
-
+@media all and (max-device-width: 590px) {
   #banner {
-    padding-left: 0.2em;
     font-size: 50%;
     padding-bottom: 2.2em;
-  }
-
-  #menu {
-    text-align: right;
   }
 
   .info-block {
