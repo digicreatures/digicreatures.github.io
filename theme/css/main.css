@@ -563,6 +563,57 @@ a.social {
   padding-left: 55px;
 }
 
+.blend4web-viewer {
+  position:relative;
+  margin: 10px auto;
+  width: 734px;
+  height: 494px;
+}
+
+.blend4web-screenshot {
+  z-index: 1;
+  border: 7px solid #bbbbbb;
+  background-color: #bbbbbb;
+  border-radius: 3px;
+  color: white;
+}
+
+.blend4web-overlay {
+    z-index: 10;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+    height: 498px;
+    width: 724px;
+}
+
+.blend4web-play {
+  padding: 0;
+  margin: 0;
+  margin-top: 132px;
+  height: 220px;
+  width: 220px;
+  margin-left: 245px;
+  background-image: url("../images/play-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-filter: brightness(1.5);
+  filter: brightness(1.5);
+}
+
+.blend4web-play:hover {
+  -webkit-filter: none;
+  filter: none;
+}
+
+.blend4web-play a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
 /* for small devices */
 @media all and (max-device-width: 800px) {
   .info-block {
