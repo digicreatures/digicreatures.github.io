@@ -70,9 +70,9 @@ kind of armature : a deformation rig for a car.</p>
 used to animate directly your model : the four wheels and the body. Rigacar expects
 your model is oriented along the Y axis. This way the front of your model matches
 the front view in <a class="reference external" href="https://www.blender.org">Blender</a>. If it is not the case, you should rotate your model
-to match this orientation. Of course, don't forget to apply rotation and scale on you model.</p>
-<p>If you look at the rig, you will notice that each bone's head (the big end) is
-positioned ahead. Please don't change the orientation of the bones or the final
+to match this orientation. Of course, don't forget to apply rotation and scale on your model.</p>
+<p>If you look at the rig, you will notice that each bone is oriented in the same direction
+as the car. Please don't change the orientation of the bones or the final
 rig will not work properly.</p>
 <p>You should place the bones for the wheels first to fit your model according
 to their names:</p>
@@ -102,7 +102,7 @@ to their names:</p>
 </tbody>
 </table>
 <p>For each wheel, the bone's head must be placed at the center of the wheel but,
-on the X axis, the bone should be placed inward (especially for front wheels to
+on the X axis, the bone should be placed at the inner edge of the wheel (especially for front wheels to
 match the pivot point of the steering axis). The length of the bone must match
 the radius of the wheel.</p>
 <p>DEF-Body is the name of the deformation bone for the car body. Its head should be placed at
@@ -122,8 +122,8 @@ You just have to follow the naming convention!</p>
 </div>
 <div class="section" id="use-naming-convention">
 <h2>Use naming convention</h2>
-<p>If you have named your objects wisely, the addon can do almost all the job for you.
-Your wheels name should end respectively with <em>Wheel.Ft.L</em>, <em>Wheel.Ft.R</em>,
+<p>If you name your objects as mentioned below, the addon can do almost all the job for you.
+Your wheels names should end respectively with <em>Wheel.Ft.L</em>, <em>Wheel.Ft.R</em>,
 <em>Wheel.Bk.L</em> and <em>Wheel.Bk.R</em> and the body name should end with <em>Body</em>. Then, make
 sure the center point of each object is correctly placed.</p>
 <p>Select all four wheels and the body (you can even select more than the expected
@@ -202,16 +202,16 @@ add keyframes for each frame.</dd>
 </div>
 <div class="section" id="adjust-suspension">
 <h2>Adjust suspension</h2>
-<p>Moving ground sensor and damper nodes has an effect over the body of your model.
+<p>Moving ground sensor and damper nodes has an effect on the body of your model.
 Animation of these bones is supposed to be subtle. Otherwise, your model
 will be stripped away. If you want, you can adjust this suspension effect in <em>Car Rig</em> panel.</p>
 <a href="http://digicreatures.net/photos/rigacar/rigacar_panel_suspension.jpg" data-lightbox="rigacar"><img alt="" src="http://digicreatures.net/photos/rigacar/rigacar_panel_suspensiont.jpg" /></a>
 <dl class="docutils">
 <dt><em>Suspension factor</em></dt>
-<dd>This factor adjust the variation on the local Z axis of the body when ground
+<dd>This factor adjusts the variation on the local Z axis of the body when ground
 sensors and/or damper nodes are moving.</dd>
 <dt><em>Suspension rolling factor</em></dt>
-<dd>This factor adjust rolling of the body when ground sensors and/or damper nodes
+<dd>This factor adjusts rolling of the body when ground sensors and/or damper nodes
 are moving.</dd>
 </dl>
 <p>If you want to keep full control on your animation, you can turn these factors
@@ -219,15 +219,15 @@ to 0 to deactivate any effect from the suspension.</p>
 </div>
 <div class="section" id="to-infinity-and-beyond">
 <h2>To infinity and beyond</h2>
-<p>I will be glad if this addon could be useful to some of you. I am no professional
+<p>I would be glad if this addon could be useful to some of you. I am no professional
 rigger nor animator. So I am pretty sure this addon and the generated rig can
 be dramatically improved. Use them in a way I have not imagined and give me feedbacks.
 You can use the comments below, you can <a class="reference external" href="https://github.com/digicreatures/rigacar/issues">create an issue</a>
 on GitHub and, of course, you can <a class="reference external" href="https://github.com/digicreatures/rigacar">fork my code</a>.</p>
-<p>Originally, I planned to use the addon developped by <a class="reference external" href="https://blenderartists.org/forum/showthread.php?239360-Car-Rig">Ondrej Raha</a>.
-But this addon seems not to work properly on latest <a class="reference external" href="https://www.blender.org">Blender</a> version. I spent
-some time trying to update it but, eventually, I realized it would not provide the features
-I was looking for. So I decided to write my own addon and finally to share it with the community.</p>
+<p>Originally, I was inspired by <a class="reference external" href="https://blenderartists.org/forum/showthread.php?239360-Car-Rig">Ondrej Raha's addon</a>.
+I eventually realized it would not provide the features
+I was looking for. So I decided to write my own addon and finally to share it with the community.
+Thanks to him for giving me inspiration.</p>
 <p>Drive safely :)</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
