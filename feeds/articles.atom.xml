@@ -17,10 +17,10 @@ following goals:&lt;/p&gt;
 &lt;div class="section" id="add-the-deformation-rig"&gt;
 &lt;h2&gt;Add the deformation rig&lt;/h2&gt;
 &lt;p&gt;Once you have installed and enabled the addon, you can add to your scene a new
-kind of armature : a deformation rig for a car.&lt;/p&gt;
+kind of armature: a deformation rig for a car.&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/rigacar/add_menu.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/add_menut.jpg" /&gt;&lt;/a&gt;
 &lt;p&gt;It is called a deformation rig because it adds an armature with only five bones
-used to animate directly your model : the four wheels and the body. Rigacar expects
+used to animate directly your model: the four wheels and the body. Rigacar expects
 your model is oriented along the Y axis. This way the front of your model matches
 the front view in &lt;a class="reference external" href="https://www.blender.org"&gt;Blender&lt;/a&gt;. If it is not the case, you should rotate your model
 to match this orientation. Of course, don't forget to apply rotation and scale on your model.&lt;/p&gt;
@@ -95,7 +95,7 @@ model is parented to the bones, you can now generate the complete rig.&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/rigacar/generate_animation_rig.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/generate_animation_rigt.jpg" /&gt;&lt;/a&gt;
 &lt;p&gt;Use the button &lt;em&gt;Generate&lt;/em&gt; available in the properties panel in the 3D View. You can
 also find the same button in the properties of the armature.&lt;/p&gt;
-&lt;p&gt;The complete rig is generated and dispatched over several armature's layers :&lt;/p&gt;
+&lt;p&gt;The complete rig is generated and dispatched over several armature's layers:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Layer 1 (blue widgets) contains the root bone for the overall model and
 the drift bone to control location and orientation of the car&lt;/li&gt;
