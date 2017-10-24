@@ -565,13 +565,14 @@ a.social {
 
 .blend4web-viewer {
   position:relative;
-  margin: 10px auto;
-  width: 734px;
-  height: 494px;
+  margin: .5em auto;
+  text-align: center;
+  width: 100%;
 }
 
 .blend4web-screenshot {
   z-index: 1;
+  max-width:90%;
   border: 7px solid #bbbbbb;
   background-color: #bbbbbb;
   border-radius: 3px;
@@ -585,17 +586,15 @@ a.social {
     margin: 0;
     left: 0;
     top: 0;
-    height: 498px;
-    width: 724px;
+    height: 100%;
+    width: 100%;
 }
 
 .blend4web-play {
   padding: 0;
   margin: 0;
-  margin-top: 132px;
-  height: 220px;
-  width: 220px;
-  margin-left: 245px;
+  height: 100%;
+  width: 100%;
   background-image: url("../images/play-button.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -612,6 +611,20 @@ a.social {
   display: inline-block;
   height: 100%;
   width: 100%;
+}
+
+.youtube {
+  margin: .5em auto;
+  text-align: center;
+}
+
+.youtube-16x9 > iframe {
+  min-width:304px;
+  min-height: 171px;
+  max-width:1024px;
+  max-height: 576px;
+  width: 40vw;
+  height: 23vw;
 }
 
 /* for small devices */
