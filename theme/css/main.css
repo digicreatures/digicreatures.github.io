@@ -70,6 +70,12 @@ h2 {
   color: white;
 }
 
+h2 {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 100%;
+  color: white;
+}
+
 a[data-lightbox] {
   display: block;
   text-align: center;
@@ -460,17 +466,22 @@ div#content {
 }
 
 .article .entry-content p {
-  padding-left: 2em;
+  padding-left: 1em;
   padding-right: 1em;
 }
 
 .article .entry-content ol {
-  padding-left: 4em;
+  padding-left: 3em;
   padding-right: 1em;
 }
 
 .article .entry-content ul {
-  padding-left: 4em;
+  padding-left: 3em;
+  padding-right: 1em;
+}
+
+.article .entry-content dl {
+  padding-left: 1em;
   padding-right: 1em;
 }
 
@@ -480,9 +491,13 @@ div#content {
 
 .article .entry-content h2 {
   background-color: #969696;
-  padding:1em;
+  padding:0.5em;
   font-size: 90%;
   border-radius: 3px 3px 0 0;
+}
+
+.article .entry-content h3 {
+  padding-left:0.5em;
 }
 
 .article header h2 a {
@@ -556,10 +571,10 @@ a.social {
   display: block;
   float: right;
   margin-left: 2em;
-  min-width: 33%;
+  width: 33%;
   background-image: url("../images/downloadable_file.png");
   background-repeat: no-repeat;
-  background-position: 10px;
+  background-position: 10px 1em;
   padding-left: 55px;
 }
 
@@ -665,4 +680,9 @@ a.social {
     height: 100px;
   }
 
+  .admonition-downloadable-file {
+    float: none;
+    width: inherit;
+    margin: 2em;
+  }
 }
