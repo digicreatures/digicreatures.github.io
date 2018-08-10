@@ -38,8 +38,8 @@
     <a id="sot" class="social twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Rigacar&amp;url=http%3A%2F%2Fdigicreatures.net%2Farticles%2Frigacar.html&amp;via=digicreatures" rel="nofollow">share <img class="logo" src="http://digicreatures.net/theme/images/twitter.png" alt="on twitter" title="you like it... share it"/></a>
   </div>
   <footer class="post-info">
-    <time class="published" datetime="2018-06-24T12:00:00+02:00">
-      Sun 24 June 2018
+    <time class="published" datetime="2018-08-10T12:00:00+02:00">
+      Fri 10 August 2018
     </time>
     <address class="vcard author">By
         <span class="fn">David Gayerie</span>
@@ -177,27 +177,37 @@ the drift bone to control location and orientation of the car</li>
 <li>Layer 3 (green widgets) contains front wheels, back wheels bones and the steering
 bone to control rotation of the wheels</li>
 <li>Layer 4 (red widgets) contains the ground sensors (one per wheel)</li>
+<li>layer 14 contains bones necessary to tweak the position of the widgets</li>
 <li>layer 15 contains main mechanical bones</li>
 <li>Layer 16 contains deformation bones (those originally added)</li>
 <li>Layer 32 contains all mechanical bones.</li>
 </ul>
-<p>Layers 1, 2, 3 and 4 are useful for animators. Layer 15 is useful for riggers
+<p>Layers 1, 2, 3 and 4 are useful for animators. Layer 14 is useful for riggers
+to tweak the generated rig (see below). Layer 15 is useful for riggers
 who want to create a more complex rig. For instance, if you want to add bones
 to control side doors, you should parent these new bones to <em>MCH-Body</em> from this layer.</p>
 <a href="http://digicreatures.net/photos/rigacar/animation_rig.jpg" data-lightbox="rigacar"><img alt="" src="http://digicreatures.net/photos/rigacar/animation_rigt.jpg" /></a>
 </div>
 <div class="section" id="tweak-the-generated-rig">
 <h2>Tweak the generated rig</h2>
-<p>Root bone (layer 1) and ground sensors (layer 4) are generated with a
+<p>Ground sensors (layer 4) are generated with a
 shrinkwrap constraint named <em>Ground projection</em>. By default, this constraint
 is not activated. When you select these bones, additional properties are added in the properties
 panel to easily customized this constraint. You can pick the object for the ground
 and adjust min/max values to limit wheels vertical position.</p>
 <a href="http://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_properties.jpg" data-lightbox="rigacar"><img alt="" src="http://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_propertiest.jpg" /></a>
-<p>Rigacar will try to position widgets to match your model. But you can adjust the
-widgets position and scale. To adjust the position, select the widget, go to edit mode
-and change the position of the bone. To adjust the scale, go to pose mode and change
-the scale of the custom widget from the bone properties panel.</p>
+<p>Rigacar will try to position widgets to match your model. But you can adjust
+position of widgets and scale them at your ease.</p>
+<p>To adjust position of widgets, go the layer 14 of the armature.
+This layer displays bones useful to tweak position of the widgets. Even if
+the rig seems to be displayed as usual, the bones are not quite the same. For instance,
+if you select the widget for the root bone, you will in fact select a bone named
+&quot;SHP-Root&quot;. If you are not familiar with creating custom shapes for bones in Blender,
+the good news is you don't need to fully understand the technical stuff.
+Just go to layer 14, select the widget you want to move, go to edit mode
+and change the position of the selected bone and it will update the position of the widget.</p>
+<p>To scale up/down a widget, you have to go back to layers 1 to 4, go to pose mode
+and change the scale of the custom widget from the bone properties panel.</p>
 </div>
 <div class="section" id="wheels-rotation-on-the-y-axis">
 <h2>Wheels rotation on the Y axis</h2>
@@ -238,8 +248,9 @@ you can put a value higher than 1.</dd>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The algorithm for baking the steering animation may produce jagged animation
-curves. I highly encourage you to check the animation and tweak generated curves.
-For instance, you can use <a class="reference external" href="https://wiki.blender.org/wiki//Extensions:2.6/Py/Scripts/Curve/Curve_Simplify">Simplify curves</a>, another add-on to reshape animation curves.</p>
+curves. I highly encourage you to check the animation and tweak generated curves
+if necessary. For instance, you can use <a class="reference external" href="https://wiki.blender.org/wiki//Extensions:2.6/Py/Scripts/Curve/Curve_Simplify">Simplify curves</a>,
+another add-on to reshape animation curves.</p>
 </div>
 </div>
 <div class="section" id="bake-wheels-rotation">
@@ -258,7 +269,7 @@ more and more tolerant and will ignore significant variations, adding less
 keyframes. On the contrary, if you set this value to zero, Rigacar will
 add keyframes for each frame.</dd>
 </dl>
-<p>If you want to animate a skidding car, you can activate brakes on wheels. Scale
+<p>If you want to animate skidding during braking, you can activate brakes on wheels. Scale
 down <em>front wheels</em> and/or <em>back wheels</em> widgets, add keyframes then hit
 <em>Bake wheels rotation</em> button.</p>
 </div>
