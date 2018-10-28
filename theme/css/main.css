@@ -633,6 +633,11 @@ a.social {
   text-align: center;
 }
 
+div.images div.youtube {
+  display: inline-block;
+  padding: .5em;
+}
+
 .youtube-16x9 > iframe {
   min-width:304px;
   min-height: 171px;
@@ -640,6 +645,11 @@ a.social {
   max-height: 576px;
   width: 40vw;
   height: 23vw;
+}
+
+div.images div.youtube-16x9 > iframe {
+  width: 20vw;
+  height: 11vw;
 }
 
 /* for small devices */
