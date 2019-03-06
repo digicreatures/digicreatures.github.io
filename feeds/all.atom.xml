@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>digiCreatures</title><link href="http://digicreatures.net/" rel="alternate"></link><link href="http://digicreatures.net/feeds/all.atom.xml" rel="self"></link><id>http://digicreatures.net/</id><updated>2018-08-10T12:00:00+02:00</updated><entry><title>Rigacar</title><link href="http://digicreatures.net/articles/rigacar.html" rel="alternate"></link><published>2018-08-10T12:00:00+02:00</published><updated>2018-08-10T12:00:00+02:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2018-08-10:/articles/rigacar.html</id><summary type="html">&lt;p class="first last"&gt;a Blender add-on to rig... a car&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>digiCreatures</title><link href="http://digicreatures.net/" rel="alternate"></link><link href="http://digicreatures.net/feeds/all.atom.xml" rel="self"></link><id>http://digicreatures.net/</id><updated>2019-03-06T12:00:00+01:00</updated><entry><title>Rigacar</title><link href="http://digicreatures.net/articles/rigacar.html" rel="alternate"></link><published>2018-08-10T12:00:00+02:00</published><updated>2019-03-06T12:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2018-08-10:/articles/rigacar.html</id><summary type="html">&lt;p class="first last"&gt;a Blender add-on to rig... a car&lt;/p&gt;
 </summary><content type="html">&lt;div class="admonition admonition-downloadable-file"&gt;
 &lt;p class="first admonition-title"&gt;Downloadable file&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/digicreatures/rigacar/releases/latest"&gt;rigacar.zip&lt;/a&gt;&lt;/p&gt;
-&lt;p class="last"&gt;The add-on is available on GitHub&lt;/p&gt;
+&lt;p class="last"&gt;The add-on is available on GitHub for &lt;strong&gt;Blender 2.7x&lt;/strong&gt; and &lt;strong&gt;Blender 2.80 Beta&lt;/strong&gt;
+(with some limitations)&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;If you want to animate cars but you don't want to spend too much time for rigging,
 Rigacar could be helpful. It is a free add-on for &lt;a class="reference external" href="https://www.blender.org"&gt;Blender&lt;/a&gt; I developed for one of
@@ -16,236 +17,380 @@ my projects. Rigacar was designed to fulfill the following goals:&lt;/p&gt;
 &lt;p&gt;Before reading the official documentation, you can watch my &lt;a class="reference external" href="https://www.youtube.com/playlist?list=PLH_mmrv8SfPFiEj93RJt3sBvHCnipI9qK"&gt;series of videotutorials&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="images docutils container"&gt;
 &lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/D3XQxA_-TzY" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/2GRy5A-MQQk" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/MN6CXG83Wdw" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/KzioiEyQ8F4" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div class="youtube youtube-16x9"&gt;&lt;iframe src="https://www.youtube.com/embed/-ZJMoQ3KpLM" allowfullscreen seamless frameBorder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class="section" id="add-the-deformation-rig"&gt;
-&lt;h2&gt;Add the deformation rig&lt;/h2&gt;
+&lt;div class="admonition caution"&gt;
+&lt;p class="first admonition-title"&gt;Caution!&lt;/p&gt;
+&lt;p&gt;These videotutorials are based on a previous version of the add-on and are
+therefore a little bit outdated. But they should still be helpful.
+Below is a list of things explained in the videos which &lt;strong&gt;are no more relevant&lt;/strong&gt;:&lt;/p&gt;
+&lt;dl class="last docutils"&gt;
+&lt;dt&gt;Part 1: adding a new rig&lt;/dt&gt;
+&lt;dd&gt;I explain in this video you need to adjust the length of the body bone when you
+add the armature to indicate the length of your model. This is no longer necessary.
+Rigacar computes bounding boxes for each reference object and their children
+to discover the dimension of your model.&lt;/dd&gt;
+&lt;dt&gt;Part 2: adjusting the rig&lt;/dt&gt;
+&lt;dd&gt;Adjusting the widget could still be necessary but the default location
+are now much more accurate.&lt;/dd&gt;
+&lt;dt&gt;Part 3: animating along a path&lt;/dt&gt;
+&lt;dd&gt;No need to tweak the delta position of the rig to use the follow path
+constraint. Now, when you generate the animation rig, the origin point of the
+rig is moved to the correct position. Just make sure to reset the position
+of the rig at the center of the scene with ALT+G.&lt;/dd&gt;
+&lt;dt&gt;Part 4: slamming on brakes&lt;/dt&gt;
+&lt;dd&gt;Brakes have their own animation widgets now.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="prepare-your-model"&gt;
+&lt;h2&gt;Prepare your model&lt;/h2&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/model.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/modelt.jpg" /&gt;&lt;/a&gt;
 &lt;div class="admonition admonition-downloadable-file"&gt;
 &lt;p class="first admonition-title"&gt;Downloadable file&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://digicreatures.net/resources/rigacar/bmw27_with_rig.blend"&gt;bmw27_with_rig.blend&lt;/a&gt;&lt;/p&gt;
 &lt;p class="last"&gt;You can download the blend file with the model and the complete rig. Don't
-forget to download and install Rigacar. Nice BMW27 model used in this article comes from the
+forget to download and install &lt;a class="reference external" href="https://github.com/digicreatures/rigacar/releases/latest"&gt;Rigacar&lt;/a&gt;.
+Nice BMW27 model used in this article is a modified version of the one available in the
 &lt;a class="reference external" href="https://www.blender.org/download/demo-files/"&gt;Blender demo files&lt;/a&gt;.
 Thanks to Mike Pan for creating and sharing it.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;Rigacar expects your model is oriented along the Y axis.
-This way the front of your model matches
-the front view in &lt;a class="reference external" href="https://www.blender.org"&gt;Blender&lt;/a&gt;. If it is not the case, you should rotate your model
-to match this orientation. Of course, don't forget to apply rotation and scale on your model.&lt;/p&gt;
-&lt;p&gt;Once you have installed and enabled the add-on, you can add to your scene a new
-kind of armature: a deformation rig for a car.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/add_menu.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/add_menut.jpg" /&gt;&lt;/a&gt;
-&lt;p&gt;It is called a deformation rig because it adds an armature with only bones
-used to animate directly your model: the wheels, the body (and optionally the
-brakes). You can use the operator panel (or press &lt;tt class="docutils literal"&gt;F6&lt;/tt&gt; in the viewport)
-to tweak the deformation rig:&lt;/p&gt;
+&lt;p&gt;Rigacar expects your model is oriented along the -Y axis and the wheels lay
+upon the grid floor. This way, the front of your model matches the front view in
+&lt;a class="reference external" href="https://www.blender.org"&gt;Blender&lt;/a&gt;. If it is not the case, you should rotate your model to match this orientation.
+Of course, don't forget to apply rotation and scale on your model.&lt;/p&gt;
+&lt;p&gt;Once you have installed and enabled the add-on, you should follow these steps:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;add front/back wheel pairs. You can even remove front wheels or back wheels
-(very convenient if you want to rig a trailer for instance)&lt;/li&gt;
-&lt;li&gt;add bones for brakes. These bones are useful if you need to control mesh elements
-in wheels which do not spin (most probably wheel brakes).&lt;/li&gt;
-&lt;li&gt;adjust bones position&lt;/li&gt;
-&lt;li&gt;adjust length of body bone&lt;/li&gt;
+&lt;li&gt;prepare your model and ensure you have followed the naming convention to let the
+add-on discover the structure of your model&lt;/li&gt;
+&lt;li&gt;add the deformation rig&lt;/li&gt;
+&lt;li&gt;generate the final animation rig&lt;/li&gt;
+&lt;li&gt;tweak the rig and, optionally, extend the rig for your own purposes&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;If you look at the rig, you will notice that each bone is oriented in the same direction
-as the car. Please don't change the orientation of the bones or the final
-rig will not work properly.&lt;/p&gt;
-&lt;p&gt;You should place the bones for the wheels first to fit your model according
-to their names:&lt;/p&gt;
-&lt;table border="1" class="docutils"&gt;
+&lt;div class="section" id="use-naming-convention-for-reference-objects"&gt;
+&lt;h3&gt;Use naming convention for reference objects&lt;/h3&gt;
+&lt;p&gt;Before adding the rig to your scene, I highly recommend to adjust your model and to follow
+a naming convention for each part. This way, Rigacar will be able to analyse your model
+and to create an accurate deformation rig.&lt;/p&gt;
+&lt;p&gt;Rigacar is able to identify &lt;em&gt;reference objects&lt;/em&gt; based on their names. Reference
+objects are objects used for the body, the wheels and the brake wheels in your model.
+The name for these reference objects should be suffixed according to the rules describe
+in the following table:&lt;/p&gt;
+&lt;table border="1" class="colwidths-given docutils"&gt;
 &lt;colgroup&gt;
-&lt;col width="50%" /&gt;
-&lt;col width="50%" /&gt;
+&lt;col width="20%" /&gt;
+&lt;col width="40%" /&gt;
+&lt;col width="40%" /&gt;
 &lt;/colgroup&gt;
 &lt;thead valign="bottom"&gt;
-&lt;tr&gt;&lt;th class="head"&gt;Bone name&lt;/th&gt;
-&lt;th class="head"&gt;Associated wheel object&lt;/th&gt;
+&lt;tr&gt;&lt;th class="head"&gt;Suffix&lt;/th&gt;
+&lt;th class="head"&gt;Part of the model&lt;/th&gt;
+&lt;th class="head"&gt;Examples&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td&gt;DEF-Wheel.Ft.L&lt;/td&gt;
-&lt;td&gt;Front left wheel&lt;/td&gt;
+&lt;tr&gt;&lt;td&gt;Body&lt;/td&gt;
+&lt;td&gt;The Body of the model&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;mycar-Body&lt;/em&gt; or &lt;em&gt;mycar.Body&lt;/em&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;DEF-Wheel.Ft.R&lt;/td&gt;
-&lt;td&gt;Front right wheel&lt;/td&gt;
+&lt;tr&gt;&lt;td&gt;Wheel.Ft.L&lt;/td&gt;
+&lt;td&gt;The front left wheel&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;mycar-Wheel.Ft.L&lt;/em&gt; or &lt;em&gt;mycar.Wheel.Ft.L&lt;/em&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;DEF-Wheel.Bk.L&lt;/td&gt;
-&lt;td&gt;Rear left wheel&lt;/td&gt;
+&lt;tr&gt;&lt;td&gt;Wheel.Ft.R&lt;/td&gt;
+&lt;td&gt;The front right wheel&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;mycar-Wheel.Ft.R&lt;/em&gt; or &lt;em&gt;mycar.Wheel.Ft.R&lt;/em&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;DEF-Wheel.Bk.R&lt;/td&gt;
-&lt;td&gt;Rear right wheel&lt;/td&gt;
+&lt;tr&gt;&lt;td&gt;Wheel.Bk.L&lt;/td&gt;
+&lt;td&gt;The rear left wheel&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;mycar-Wheel.Bk.L&lt;/em&gt; or &lt;em&gt;mycar.Wheel.Bk.L&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Wheel.Bk.R&lt;/td&gt;
+&lt;td&gt;The rear right wheel&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;mycar-Wheel.Bk.R&lt;/em&gt; or &lt;em&gt;mycar.Wheel.Bk.R&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;WheelBrake.Ft.L&lt;/td&gt;
+&lt;td&gt;The front left brake wheel or any part associated with the wheel which does not spin&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;mycar-WheelBrake.Ft.L&lt;/em&gt; or &lt;em&gt;mycar.WheelBrake.Ft.L&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;WheelBrake.Ft.R&lt;/td&gt;
+&lt;td&gt;The front right brake wheel or any part associated with the wheel which does not spin&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;mycar-WheelBrake.Ft.R&lt;/em&gt; or &lt;em&gt;mycar.WheelBrake.Ft.R&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;WheelBrake.Bk.L&lt;/td&gt;
+&lt;td&gt;The rear left brake wheel or any part associated with the wheel which does not spin&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;mycar-WheelBrake.Bk.L&lt;/em&gt; or &lt;em&gt;mycar.WheelBrake.Bk.L&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;WheelBrake.Bk.R&lt;/td&gt;
+&lt;td&gt;The rear right brake wheel or any part associated with the wheel which does not spin&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;mycar-WheelBrake.Bk.R&lt;/em&gt; or &lt;em&gt;mycar.WheelBrake.Bk.R&lt;/em&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;If you create a rig with more than one front or back wheel pairs, additional
-bones are suffixed by a number:  DEF-Wheel.Ft.L.001 and DEF-Wheel.Ft.R.001 for
-instance.&lt;/p&gt;
-&lt;p&gt;For each wheel, the bone's head must be placed at the center of the wheel but,
-on the X axis, the bone should be placed at the inner edge of the wheel (especially for front wheels to
-match the pivot point of the steering axis). The length of the bone does not
-have to match the radius of the wheel. Rigacar derives the radius of a wheel
-from the position on the z axis of the corresponding wheel bone.&lt;/p&gt;
-&lt;p&gt;If you have bones for brakes, their head should also be placed at the center of the wheel.&lt;/p&gt;
-&lt;p&gt;DEF-Body is the name of the deformation bone for the car body. Its head should be placed at
-the center of the car chassis and the tail should be at the back of the model to
-give an hint of its length.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/deformation_rig.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/deformation_rigt.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;You may have multiple objects for each part. For instance you may have one
+object for the wheel rim and another for the tire. Consider one of these as
+the reference object and name it according to the convention.
+Then parent the others to this one. See below as an example, the outliner for
+the scene used in this article:&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/outliner_objects_hierarchy.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/outliner_objects_hierarchyt.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;If your model has more than one pair of wheels at front or at rear, use the same
+convention as Blender: add a number with 3 digits at the end: &lt;em&gt;mycar-Wheel.Ft.L.001&lt;/em&gt;,
+&lt;em&gt;mycar-Wheel.Ft.R.001&lt;/em&gt;, &lt;em&gt;mycar-Wheel.Ft.L.002&lt;/em&gt;, &lt;em&gt;mycar-Wheel.Ft.R.002&lt;/em&gt;...&lt;/p&gt;
+&lt;p&gt;If some of these objects do not exist, Rigacar will adjust the rig. For instance,
+you can create a valid rig for models with no brake wheel. You
+can even use Rigacar for models without any front wheel or back wheel (or even
+no wheel at all... even if I doubt your model should be some sort of car).&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="parent-your-model"&gt;
-&lt;h2&gt;Parent your model&lt;/h2&gt;
-&lt;p&gt;Then you have to parent each part of your model to the corresponding bone. If
-your model has many distinct objects (for instance if you have objects for the
-rims and others for the tires), you can either parent them to the corresponding
-bone or create a hierarchy (i.e. parenting the tire to the rim and the rim to the bone).&lt;/p&gt;
-&lt;p&gt;You can now generate the complete rig... but wait! This is really
-a cumbersome workflow. Actually, you can achieve the previous steps in a much faster way.
-You just have to follow the naming convention!&lt;/p&gt;
+&lt;div class="section" id="check-origins"&gt;
+&lt;h3&gt;Check origins&lt;/h3&gt;
+&lt;p&gt;Rigacar will use the origin point of each reference objects to locate the generated
+bones. Before adding the deformation rig (see the next section), you should check
+the origin of each of them:&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Reference object for the body&lt;/dt&gt;
+&lt;dd&gt;The origin indicates the location around which the model will pitch and roll.&lt;/dd&gt;
+&lt;dt&gt;Reference object for the wheel&lt;/dt&gt;
+&lt;dd&gt;The origin indicates the center of the wheel which is the intersection of the
+spinning axis and the steering axis (only for front wheels)&lt;/dd&gt;
+&lt;dt&gt;Reference object for the brake wheel&lt;/dt&gt;
+&lt;dd&gt;The origin should be the point of the attachment of the brake wheel. You should
+use the same as the wheels.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;In the model below, you see the origin point and the name of each reference objects:&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/reference_objects.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/reference_objectst.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;Reference object for the body is yellow, reference objects for wheels are red
+and reference objects for brakes are green. All other objects are white and are
+parented to one reference object.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="use-naming-convention"&gt;
-&lt;h2&gt;Use naming convention&lt;/h2&gt;
-&lt;p&gt;If you name your objects as mentioned below, the add-on can do almost all the job for you.
-Your wheels names should end respectively with &lt;em&gt;Wheel.Ft.L&lt;/em&gt;, &lt;em&gt;Wheel.Ft.R&lt;/em&gt;,
-&lt;em&gt;Wheel.Bk.L&lt;/em&gt; and &lt;em&gt;Wheel.Bk.R&lt;/em&gt; and the body name should end with &lt;em&gt;Body&lt;/em&gt;. Then, make
-sure the center point of each object is correctly placed. If your model has more
-than one front or back wheel pairs, additional wheels must be prefixed by number
-(for instance &lt;em&gt;Wheel.Ft.L.001&lt;/em&gt;, &lt;em&gt;Wheel.FT.R.001&lt;/em&gt;). If your model has brakes, their name
-should follow the same convention with &lt;em&gt;WheelBrake.Ft.L&lt;/em&gt;, &lt;em&gt;WheelBrake.Ft.R&lt;/em&gt;,
-&lt;em&gt;WheelBrake.Bk.L&lt;/em&gt;, &lt;em&gt;WheelBrake.Bk.R&lt;/em&gt;...&lt;/p&gt;
-&lt;p&gt;Select all objects from your model (you can select more than the expected
-objects because the additional ones will simply be ignored) and add the deformation
-rig. Rigacar will automatically create each bone to match the center point of
-the corresponding object. You can use the operator parameters (press &lt;tt class="docutils literal"&gt;F6&lt;/tt&gt;)
-to quickly adjust the rig. For instance you can easily push wheel bones inward on the X axis.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/deformation_rig_operator_panel.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/deformation_rig_operator_panelt.jpg" /&gt;&lt;/a&gt;
-&lt;p&gt;Rigacar will also automatically parent your objects with the correct bone. This way,
-you can generate a rig for your model in only few seconds.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="add-the-deformation-rig"&gt;
+&lt;h2&gt;Add the deformation rig&lt;/h2&gt;
+&lt;p&gt;Once you have installed the add-on, you can add a new kind of armature in your
+scene: a &lt;strong&gt;car deformation rig&lt;/strong&gt;. It is an armature with only bones
+used to animate directly your model: the body, the wheels and the brakes.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/add_menu.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/add_menut.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;When you add such an armature, Rigacar will try to discover reference objects
+amongst the selected objects. For each one found, Rigacar will automatically position
+the associated bones at the same origin point and will parent the reference object
+to the bone. So the rule of thumb is: select all the objects of your
+model and then add the rig.&lt;/p&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;If needed, you can use the operator panel to tweak the deformation rig:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;add front/back wheel pairs. You can even remove front wheels or back wheels&lt;/li&gt;
+&lt;li&gt;add bones for brakes&lt;/li&gt;
+&lt;li&gt;adjust location of bones&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have correctly prepared your model, you should not have to tweak the
+deformation rig.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/deformation_rig_operator_panel.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" class="last" src="http://digicreatures.net/photos/rigacar/deformation_rig_operator_panelt.jpg" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;If you look at the rig, you will notice each bone is oriented in the same
+direction as the car (along the -Y axis). Please, don't change the orientation of
+the bones or the final rig will not work properly. Each generated bone is named
+following the same convention as the reference objects:&lt;/p&gt;
+&lt;table border="1" class="colwidths-given docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="38%" /&gt;
+&lt;col width="63%" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;DEF-Body&lt;/td&gt;
+&lt;td&gt;Deformation bone for the body&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;DEF-Wheel.Ft.L&lt;/td&gt;
+&lt;td&gt;Deformation bone for the front left wheel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;DEF-Wheel.Ft.R&lt;/td&gt;
+&lt;td&gt;Deformation bone for the front right wheel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;DEF-Wheel.Bk.L&lt;/td&gt;
+&lt;td&gt;Deformation bone for the rear left wheel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;DEF-Wheel.Bk.R&lt;/td&gt;
+&lt;td&gt;Deformation bone for the rear right wheel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;DEF-WheelBrake.Ft.L&lt;/td&gt;
+&lt;td&gt;Deformation bone for the front left brake&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;DEF-WheelBrake.Ft.R&lt;/td&gt;
+&lt;td&gt;Deformation bone for the front right brake&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;DEF-WheelBrake.Bk.L&lt;/td&gt;
+&lt;td&gt;Deformation bone for the rear left brake&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;DEF-WheelBrake.Bk.R&lt;/td&gt;
+&lt;td&gt;Deformation bone for the rear right brake&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If your model has more than one front or back pair of wheels, additional
+bones will have name suffixed by a number: DEF-Wheel.Ft.L.001 or
+DEF-Wheel.Ft.R.001 for instance.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/deformation_rig_with_bonesname.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/deformation_rig_with_bonesnamet.jpg" /&gt;&lt;/a&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p class="last"&gt;If you can't follow the naming convention for the reference objects of your model,
+you will have to edit the rig to position each bone correctly and parent each
+reference object to the corresponding bone.&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="generate-the-complete-rig"&gt;
 &lt;h2&gt;Generate the complete rig&lt;/h2&gt;
-&lt;p&gt;Whatever the method you have chosen, once the deformation rig is in place and your
-model is parented to the bones, you can now generate the complete rig.&lt;/p&gt;
+&lt;p&gt;Once the deformation rig is added, you can now generate the complete rig.&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/rigacar/generate_animation_rig.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/generate_animation_rigt.jpg" /&gt;&lt;/a&gt;
-&lt;p&gt;Use the button &lt;em&gt;Generate&lt;/em&gt; available in the properties panel in the 3D View. You can
+&lt;p&gt;Use the button &lt;tt class="docutils literal"&gt;Generate&lt;/tt&gt; available in the properties panel in the 3D View. You can
 also find the same button in the properties of the armature.&lt;/p&gt;
-&lt;p&gt;The complete rig is generated and dispatched over several armature's layers:&lt;/p&gt;
+&lt;p&gt;The complete rig is generated and the animation widgets are dispatched over
+several armature's layers:&lt;/p&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;Layer 1 (blue widgets) contains the root bone for the overall model and
-the drift bone to control location and orientation of the car&lt;/li&gt;
-&lt;li&gt;Layer 2 (yellow widgets) contains the suspension bone and one damper bone per wheel&lt;/li&gt;
-&lt;li&gt;Layer 3 (green widgets) contains front wheels, back wheels bones and the steering
-bone to control rotation of the wheels&lt;/li&gt;
-&lt;li&gt;Layer 4 (red widgets) contains the ground sensors (one per wheel)&lt;/li&gt;
+&lt;li&gt;Layer 1 (blue widgets) contains the root widget for the overall model and
+the drift widget to control location and orientation of the car&lt;/li&gt;
+&lt;li&gt;Layer 2 (yellow widgets) contains the suspension widget and one damper widget per wheel&lt;/li&gt;
+&lt;li&gt;Layer 3 (green widgets) contains widgets for front wheels, back wheels, brakes and steering&lt;/li&gt;
+&lt;li&gt;Layer 4 (red widgets) contains the ground sensors (one per wheel and one per axle)&lt;/li&gt;
 &lt;li&gt;layer 14 contains bones necessary to tweak the position of the widgets&lt;/li&gt;
 &lt;li&gt;layer 15 contains main mechanical bones&lt;/li&gt;
-&lt;li&gt;Layer 16 contains deformation bones (those originally added)&lt;/li&gt;
+&lt;li&gt;Layer 16 contains deformation bones (those originally added by the deformation rig)&lt;/li&gt;
 &lt;li&gt;Layer 32 contains all mechanical bones.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Layers 1, 2, 3 and 4 are useful for animators. Layer 14 is useful for riggers
 to tweak the generated rig (see below). Layer 15 is useful for riggers
-who want to create a more complex rig. For instance, if you want to add bones
+who want to extend the rig with more bones. For instance, if you want to add bones
 to control side doors, you should parent these new bones to &lt;em&gt;MCH-Body&lt;/em&gt; from this layer.&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/rigacar/animation_rig.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/animation_rigt.jpg" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class="section" id="tweak-the-generated-rig"&gt;
 &lt;h2&gt;Tweak the generated rig&lt;/h2&gt;
-&lt;p&gt;Ground sensors (layer 4) are generated with a
-shrinkwrap constraint named &lt;em&gt;Ground projection&lt;/em&gt;. By default, this constraint
-is not activated. When you select these bones, additional properties are added in the properties
-panel to easily customized this constraint. You can pick the object for the ground
-and adjust min/max values to limit wheels vertical position.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_properties.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_propertiest.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;Once you have generated the animation rig, you may need to tweak it.&lt;/p&gt;
+&lt;div class="section" id="check-the-spinning-of-the-wheels"&gt;
+&lt;h3&gt;Check the spinning of the wheels&lt;/h3&gt;
+&lt;p&gt;The animation rig can rotate wheels as you move your model along the Y axis.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_wheels_on_y_axis.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/rigacar_panel_wheels_on_y_axist.jpg" /&gt;&lt;/a&gt;
+&lt;p&gt;Be aware the spinning is only correct for translation on this axis.
+So, this feature is not the proper way to animate wheels with Rigacar (see section
+below). But it is useful to quickly check the generated rig. In the properties panel,
+put the property &lt;tt class="docutils literal"&gt;Wheels on Y axis&lt;/tt&gt; to 1 to activate this feature. Don't forget
+to set it back to 0 when you have checked your model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="adjust-widgets-location"&gt;
+&lt;h3&gt;Adjust widgets' location&lt;/h3&gt;
 &lt;p&gt;Rigacar will try to position widgets to match your model. But you can adjust
 position of widgets and scale them at your ease.&lt;/p&gt;
 &lt;p&gt;To adjust position of widgets, go the layer 14 of the armature.
 This layer displays bones useful to tweak position of the widgets. Even if
 the rig seems to be displayed as usual, the bones are not quite the same. For instance,
 if you select the widget for the root bone, you will in fact select a bone named
-&amp;quot;SHP-Root&amp;quot;. If you are not familiar with creating custom shapes for bones in Blender,
+&lt;em&gt;SHP-Root&lt;/em&gt;. If you are not familiar with creating custom shapes for bones in Blender,
 the good news is you don't need to fully understand the technical stuff.
 Just go to layer 14, select the widget you want to move, go to edit mode
 and change the position of the selected bone and it will update the position of the widget.&lt;/p&gt;
 &lt;p&gt;To scale up/down a widget, you have to go back to layers 1 to 4, go to pose mode
-and change the scale of the custom widget from the bone properties panel.&lt;/p&gt;
+and change the scale of the custom widget from properties panel for the bone.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="wheels-rotation-on-the-y-axis"&gt;
-&lt;h2&gt;Wheels rotation on the Y axis&lt;/h2&gt;
-&lt;p&gt;The animation rig can rotate wheels as you move your model along the Y axis.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_wheels_on_y_axis.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/rigacar_panel_wheels_on_y_axist.jpg" /&gt;&lt;/a&gt;
-&lt;p&gt;Be aware the rotation is only correct for translation on this axis.
-So, this feature is not the proper way to animate wheels with Rigacar (see section
-below). But it is useful to quickly check the generated rig. In &lt;em&gt;Car Rig&lt;/em&gt; panel,
-put the property 'Wheels on Y axis' to 1 to activate this feature.&lt;/p&gt;
+&lt;div class="section" id="edit-properties-for-ground-sensors"&gt;
+&lt;h3&gt;Edit properties for ground sensors&lt;/h3&gt;
+&lt;p&gt;Ground sensors (layer 4) are widgets generated and for each wheel for each axle. They
+are used to make sure your model will follow the ground of your scene. They are
+bones generated with a &lt;a class="reference external" href="https://docs.blender.org/manual/en/latest/rigging/constraints/relationship/shrinkwrap.html"&gt;shrinkwrap constraint&lt;/a&gt; named &lt;em&gt;Ground projection&lt;/em&gt;.
+This constraint is not activated by default. You can tweak each ground sensor
+from a dedicated section in the properties panel (prior to Blender 2.80, you need
+to select the ground sensors to see their properties). You can pick the object
+for the ground and adjust min/max local Z values to limit wheels vertical position.
+You can also pick the object in your scene which is the ground.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_properties.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_propertiest.jpg" /&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="section" id="adjust-suspension"&gt;
+&lt;h3&gt;Adjust suspension&lt;/h3&gt;
+&lt;p&gt;Moving ground sensor and damper widgets has an effect on the body of your model.
+Animation of these widgets is supposed to be subtle. Otherwise, your model
+will be stripped away. If you want, you can adjust this suspension effect in
+the &lt;em&gt;Animation Rig&lt;/em&gt; panel.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_suspension.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/rigacar_panel_suspensiont.jpg" /&gt;&lt;/a&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;Pitch factor&lt;/dt&gt;
+&lt;dd&gt;This factor adjusts the variation on the local Z axis of the body when ground
+sensors and/or damper widgets are moving.&lt;/dd&gt;
+&lt;dt&gt;Roll factor&lt;/dt&gt;
+&lt;dd&gt;This factor adjusts rolling of the body on the local Y axis when ground sensors
+and/or damper widgets are moving.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;If you want to keep full control on your animation, you can turn these factors
+to 0 to deactivate any effect from the suspension.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="add-widgets-for-brake"&gt;
+&lt;h3&gt;Add widgets for brake&lt;/h3&gt;
+&lt;p&gt;By default, Rigacar generates one widget for brake at the front and one at
+the rear. These widgets can be scale in/out to simulate the effect of brakes.
+Rigacar will take them into account for generating the spinning of wheels
+(see next section).&lt;/p&gt;
+&lt;p&gt;You may need to have more widgets for brakes if you want to animate wheels
+independently. To add more widgets in pose mode, select the widget for wheel to
+indicate which wheel must have their own widget for brake. Search for the operator
+named &lt;tt class="docutils literal"&gt;Add missing brake wheel bones&lt;/tt&gt; by pressing &lt;tt class="docutils literal"&gt;F3&lt;/tt&gt; in Blender 2.80 (or
+&lt;tt class="docutils literal"&gt;Space&lt;/tt&gt; for previous versions). Then press &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; and additional widgets are added.&lt;/p&gt;
+&lt;a href="http://digicreatures.net/photos/rigacar/add_brake.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/add_braket.jpg" /&gt;&lt;/a&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="bake-wheels-animation"&gt;
 &lt;h2&gt;Bake wheels animation&lt;/h2&gt;
 &lt;p&gt;Most of the time, you don't really need to animate wheels. Rigacar can bake the
 animation for you based on the motion of your model. So you should not animate
-the steering bone nor the front wheels bone and the back wheels bone but use
-buttons to bake their animation.&lt;/p&gt;
+the steering widget nor widget for wheels but use buttons to bake their animation.&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_bake.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/rigacar_panel_baket.jpg" /&gt;&lt;/a&gt;
 &lt;div class="section" id="bake-steering"&gt;
 &lt;h3&gt;Bake steering&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Bake steering&lt;/em&gt; button will compute animation of the steering. When you click
+&lt;p&gt;The button &lt;tt class="docutils literal"&gt;Bake car steering&lt;/tt&gt; computes animation of the steering. When you click
 on it, a popup dialog is displayed to adjust baking parameters:&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_bake_steering.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/rigacar_panel_bake_steeringt.jpg" /&gt;&lt;/a&gt;
 &lt;dl class="docutils"&gt;
-&lt;dt&gt;&lt;em&gt;Start frame and end frame&lt;/em&gt;&lt;/dt&gt;
+&lt;dt&gt;Start frame and end frame&lt;/dt&gt;
 &lt;dd&gt;The range for the animation. By default it matches the range of the current
 animation. You can adjust it if you like.&lt;/dd&gt;
-&lt;dt&gt;&lt;em&gt;Keyframe tolerance&lt;/em&gt;&lt;/dt&gt;
-&lt;dd&gt;Rigacar tries not to add keyframe if it is not necessary. If you want to remove
+&lt;dt&gt;Keyframe tolerance&lt;/dt&gt;
+&lt;dd&gt;Rigacar can try not to add keyframe if it is not necessary. If you want to remove
 some noise in the animation, you can crank up this value: Rigacar will become
 more and more tolerant and will ignore significant variations, adding less
 keyframes. On the contrary, if you set this value to zero, Rigacar will
 add keyframes for each frame.&lt;/dd&gt;
-&lt;dt&gt;&lt;em&gt;Rotation factor&lt;/em&gt;&lt;/dt&gt;
+&lt;dt&gt;Rotation factor&lt;/dt&gt;
 &lt;dd&gt;The value is used as a factor to adjust strength of the steering. If you want
 to create animation with a more noticeable animation of the steering rotation,
-you can put a value higher than 1.&lt;/dd&gt;
+you can put a value higher than 1.5.&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;div class="admonition note"&gt;
 &lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
 &lt;p class="last"&gt;The algorithm for baking the steering animation may produce jagged animation
-curves. I highly encourage you to check the animation and tweak generated curves
-if necessary. For instance, you can use &lt;a class="reference external" href="https://wiki.blender.org/wiki//Extensions:2.6/Py/Scripts/Curve/Curve_Simplify"&gt;Simplify curves&lt;/a&gt;,
-another add-on to reshape animation curves.&lt;/p&gt;
+curves. I highly encourage you to check the animation. If you have issues,
+try to choose 0 for the &lt;em&gt;keyframe tolerance&lt;/em&gt; and tweak generated curves if
+necessary. For instance, you can use &lt;a class="reference external" href="https://wiki.blender.org/wiki//Extensions:2.6/Py/Scripts/Curve/Curve_Simplify"&gt;Simplify curves&lt;/a&gt;, another add-on to
+reshape animation curves.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="bake-wheels-rotation"&gt;
 &lt;h3&gt;Bake wheels rotation&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Bake wheels rotation&lt;/em&gt; button will compute rotation of the wheels. When you click
+&lt;p&gt;The button &lt;tt class="docutils literal"&gt;Bake wheels rotation&lt;/tt&gt; computes spinning of the wheels. Rigacar
+takes into account the brake widgets to animate the wheels. When you click
 on it, a popup dialog is displayed to adjust baking parameters:&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_bake_wheels_rotation.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/rigacar_panel_bake_wheels_rotationt.jpg" /&gt;&lt;/a&gt;
 &lt;dl class="docutils"&gt;
-&lt;dt&gt;&lt;em&gt;Start frame and end frame&lt;/em&gt;&lt;/dt&gt;
+&lt;dt&gt;Start frame and end frame&lt;/dt&gt;
 &lt;dd&gt;The range for the animation. By default it matches the range of the current
 animation. You can adjust it if you like.&lt;/dd&gt;
-&lt;dt&gt;&lt;em&gt;Keyframe tolerance&lt;/em&gt;&lt;/dt&gt;
-&lt;dd&gt;Rigacar tries not to add keyframe if it is not necessary. If you want to remove
+&lt;dt&gt;Keyframe tolerance&lt;/dt&gt;
+&lt;dd&gt;Rigacar can try not to add keyframe if it is not necessary. If you want to remove
 some noise in the animation, you can crank up this value: Rigacar will become
 more and more tolerant and will ignore significant variations, adding less
 keyframes. On the contrary, if you set this value to zero, Rigacar will
 add keyframes for each frame.&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;p&gt;If you want to animate skidding during braking, you can activate brakes on wheels. Scale
-down &lt;em&gt;front wheels&lt;/em&gt; and/or &lt;em&gt;back wheels&lt;/em&gt; widgets, add keyframes then hit
-&lt;em&gt;Bake wheels rotation&lt;/em&gt; button.&lt;/p&gt;
+down brake widgets, add keyframes then hit &lt;tt class="docutils literal"&gt;Bake wheels rotation&lt;/tt&gt; again.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div class="section" id="clear-baked-animation"&gt;
+&lt;h3&gt;Clear baked animation&lt;/h3&gt;
+&lt;p&gt;Sometime, you want to remove animations generated by Rigacar for steering and
+wheels. In this case, click on the button &lt;tt class="docutils literal"&gt;Clear baked animation&lt;/tt&gt;. This will reset
+bones rotation and remove generated keyframes.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="section" id="adjust-suspension"&gt;
-&lt;h2&gt;Adjust suspension&lt;/h2&gt;
-&lt;p&gt;Moving ground sensor and damper nodes has an effect on the body of your model.
-Animation of these bones is supposed to be subtle. Otherwise, your model
-will be stripped away. If you want, you can adjust this suspension effect in &lt;em&gt;Car Rig&lt;/em&gt; panel.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_suspension.jpg" data-lightbox="rigacar"&gt;&lt;img alt="" src="http://digicreatures.net/photos/rigacar/rigacar_panel_suspensiont.jpg" /&gt;&lt;/a&gt;
-&lt;dl class="docutils"&gt;
-&lt;dt&gt;&lt;em&gt;Suspension factor&lt;/em&gt;&lt;/dt&gt;
-&lt;dd&gt;This factor adjusts the variation on the local Z axis of the body when ground
-sensors and/or damper nodes are moving.&lt;/dd&gt;
-&lt;dt&gt;&lt;em&gt;Suspension rolling factor&lt;/em&gt;&lt;/dt&gt;
-&lt;dd&gt;This factor adjusts rolling of the body when ground sensors and/or damper nodes
-are moving.&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;p&gt;If you want to keep full control on your animation, you can turn these factors
-to 0 to deactivate any effect from the suspension.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="to-infinity-and-beyond"&gt;
 &lt;h2&gt;To infinity and beyond&lt;/h2&gt;
@@ -260,8 +405,15 @@ I was looking for. So I decided to write my own add-on and finally to share it w
 Thanks to him for giving me inspiration.&lt;/p&gt;
 &lt;p&gt;Drive safely :)&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="rigacar"></category><category term="blender"></category><category term="rig"></category><category term="car"></category><category term="animation"></category></entry><entry><title>Baking normal from Cycles material</title><link href="http://digicreatures.net/articles/cycles-normal-baking.html" rel="alternate"></link><published>2017-06-10T12:00:00+02:00</published><updated>2017-06-10T12:00:00+02:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-06-10:/articles/cycles-normal-baking.html</id><summary type="html">&lt;p class="first last"&gt;a useful node for baking normal correctly&lt;/p&gt;
-</summary><content type="html">&lt;div class="admonition admonition-downloadable-file"&gt;
+</content><category term="rigacar"></category><category term="blender"></category><category term="rig"></category><category term="car"></category><category term="animation"></category></entry><entry><title>Baking normal from Cycles material</title><link href="http://digicreatures.net/articles/cycles-normal-baking.html" rel="alternate"></link><published>2017-06-10T12:00:00+02:00</published><updated>2019-03-04T12:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-06-10:/articles/cycles-normal-baking.html</id><summary type="html">&lt;p class="first last"&gt;a useful node for baking normal correctly&lt;/p&gt;
+</summary><content type="html">&lt;div class="admonition note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
+&lt;p&gt;Important update since 2019-03-04&lt;/p&gt;
+&lt;p class="last"&gt;&lt;strong&gt;If you use Blender 2.80 or later, you do not need anymore&lt;/strong&gt; the &lt;em&gt;normal to map&lt;/em&gt;
+node. Blender 2.80 now takes into account normal information created by your
+material when you bake the normals. Thanks to the Blender developers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="admonition admonition-downloadable-file"&gt;
 &lt;p class="first admonition-title"&gt;Downloadable file&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://digicreatures.net/resources/normal_to_map.blend"&gt;normal_to_map.blend&lt;/a&gt;&lt;/p&gt;
 &lt;p class="last"&gt;This file contains the &lt;em&gt;normal to map&lt;/em&gt; node for Cycles.&lt;/p&gt;
@@ -286,8 +438,8 @@ map or bump map but not both of them. You shoudn't have to choose between one ma
 &lt;li&gt;If you use high resolution textures, it could be interesting to merge information from normal map,
 bump map and procedural normal textures into a single normal map to reduce memory footprint and simplify your material.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="admonition tip"&gt;
-&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
 &lt;p class="last"&gt;The &lt;em&gt;Material Output&lt;/em&gt; node in Cycles has the &lt;em&gt;Displacement&lt;/em&gt; dedicated slot. If you use this slot in your material
 it deactivates all &lt;em&gt;Normal&lt;/em&gt; slot from all nodes. But as it also clearly indicates to Cycles how your material
 is affecting the geometry, then the effect of the displacement will be included in the bake process.&lt;/p&gt;
@@ -321,8 +473,8 @@ properties panel in the UV/image editor.&lt;/p&gt;
 &lt;a href="http://digicreatures.net/photos/full_normal_baking/texture_color_space.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Texture color space in the UV/image editor" src="http://digicreatures.net/photos/full_normal_baking/texture_color_spacet.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Texture color space in the UV/image editor&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="admonition tip"&gt;
-&lt;p class="first admonition-title"&gt;Tip&lt;/p&gt;
+&lt;div class="admonition note"&gt;
+&lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
 &lt;p class="last"&gt;For people using the Filmic Blender color management, &lt;em&gt;sRGB&lt;/em&gt; is labeled &lt;em&gt;sRGB EOTF&lt;/em&gt; and &lt;em&gt;Non-color&lt;/em&gt; is labeled &lt;em&gt;Non-Colour Data&lt;/em&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Usage of this node follows these steps:&lt;/p&gt;

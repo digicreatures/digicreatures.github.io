@@ -33,21 +33,26 @@
       <p class="first last">a useful node for baking normal correctly</p>
 
     </div>    <img class="cover" src="http://digicreatures.net/photos/full_normal_baking/covert.jpg" alt="Baking normal from Cycles material thumbnail">  </header>
-  <div class="share">
-    <a id="sof" class="social facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdigicreatures.net%2Farticles%2Fcycles-normal-baking.html" rel="nofollow">share <img class="logo" src="http://digicreatures.net/theme/images/facebook.png" alt="on facebook" title="you like it... share it"/></a>
-    <a id="sot" class="social twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Baking%20normal%20from%20Cycles%20material&amp;url=http%3A%2F%2Fdigicreatures.net%2Farticles%2Fcycles-normal-baking.html&amp;via=digicreatures" rel="nofollow">share <img class="logo" src="http://digicreatures.net/theme/images/twitter.png" alt="on twitter" title="you like it... share it"/></a>
-  </div>
   <footer class="post-info">
-    <time class="published" datetime="2017-06-10T12:00:00+02:00">
-      Sat 10 June 2017
-    </time>
+    <time class="published" datetime="2017-06-10T12:00:00+02:00">Sat 10 June 2017</time>
+	  (last&nbsp;update&nbsp;on <time class="modified" datetime="2019-03-04T12:00:00+01:00">Mon 04 March 2019</time>)
     <address class="vcard author">By
         <span class="fn">David Gayerie</span>
     </address>
   </footer>
-
+  <div class="share">
+    <a id="sof" class="social facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdigicreatures.net%2Farticles%2Fcycles-normal-baking.html" rel="nofollow">share <img class="logo" src="http://digicreatures.net/theme/images/facebook.png" alt="on facebook" title="you like it... share it"/></a>
+    <a id="sot" class="social twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Baking%20normal%20from%20Cycles%20material&amp;url=http%3A%2F%2Fdigicreatures.net%2Farticles%2Fcycles-normal-baking.html&amp;via=digicreatures" rel="nofollow">share <img class="logo" src="http://digicreatures.net/theme/images/twitter.png" alt="on twitter" title="you like it... share it"/></a>
+  </div>
   <div class="entry-content">
-    <div class="admonition admonition-downloadable-file">
+    <div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Important update since 2019-03-04</p>
+<p class="last"><strong>If you use Blender 2.80 or later, you do not need anymore</strong> the <em>normal to map</em>
+node. Blender 2.80 now takes into account normal information created by your
+material when you bake the normals. Thanks to the Blender developers.</p>
+</div>
+<div class="admonition admonition-downloadable-file">
 <p class="first admonition-title">Downloadable file</p>
 <p><a class="reference external" href="http://digicreatures.net/resources/normal_to_map.blend">normal_to_map.blend</a></p>
 <p class="last">This file contains the <em>normal to map</em> node for Cycles.</p>
@@ -72,8 +77,8 @@ map or bump map but not both of them. You shoudn't have to choose between one ma
 <li>If you use high resolution textures, it could be interesting to merge information from normal map,
 bump map and procedural normal textures into a single normal map to reduce memory footprint and simplify your material.</li>
 </ul>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p class="last">The <em>Material Output</em> node in Cycles has the <em>Displacement</em> dedicated slot. If you use this slot in your material
 it deactivates all <em>Normal</em> slot from all nodes. But as it also clearly indicates to Cycles how your material
 is affecting the geometry, then the effect of the displacement will be included in the bake process.</p>
@@ -107,8 +112,8 @@ properties panel in the UV/image editor.</p>
 <a href="http://digicreatures.net/photos/full_normal_baking/texture_color_space.jpg" data-lightbox="full_normal_baking"><img alt="Texture color space in the UV/image editor" src="http://digicreatures.net/photos/full_normal_baking/texture_color_spacet.jpg" /></a>
 <p class="caption">Texture color space in the UV/image editor</p>
 </div>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p class="last">For people using the Filmic Blender color management, <em>sRGB</em> is labeled <em>sRGB EOTF</em> and <em>Non-color</em> is labeled <em>Non-Colour Data</em>.</p>
 </div>
 <p>Usage of this node follows these steps:</p>

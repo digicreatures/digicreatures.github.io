@@ -8,15 +8,15 @@ html {
 }
 
 body {
-  background: white;
+  background: #DDDDDD;
   height: 100%;
   font-family: 'NTR', sans-serif;
   font-size: 14pt;
   margin-bottom: 16em;
+  color: #333333;
 }
 
 body>section {
-  max-width: 1250px;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
@@ -70,7 +70,7 @@ h2 {
   color: white;
 }
 
-h2 {
+h3 {
   font-family: 'Comfortaa', sans-serif;
   font-size: 100%;
   color: white;
@@ -96,25 +96,40 @@ a[data-lightbox]>img {
 }
 
 table {
-  border-collapse: collapse;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 90%;
-	text-align: left;
-	margin-bottom: 1em;
-}
-
-thead {
-  background-color: black;
-  color: #dcdcdc;
+  border-color: black;
+  border-style: solid;
+  border-width: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
+  text-align: left;
+  margin-bottom: 1em;
+  font-size: 90%;
 }
 
 tbody tr:nth-child(even) {
-	background: rgb(233, 233, 233);
+	background: rgb(244, 244, 244);
 }
 
-td, th {
+th {
+  border-style: solid;
+  border-width: 0px;
+  padding: 0em 0.3em;
+}
+
+tbody tr:nth-child(1) td {
+  border-top-width: 2px;
+}
+
+tbody tr:last-of-type td {
+  border-bottom-width: 2px;
+}
+
+td {
+  border-style: solid;
+  border-width: 0px;
   padding: 0.3em;
+  border-width: 0px;
 }
 
 .figure {
@@ -158,7 +173,6 @@ div.images, div.figure {
   height: 2em;
   padding-top: .2em;
   background-color: black;
-  color: #dcdcdc;
 }
 
 #banner span {
@@ -166,11 +180,11 @@ div.images, div.figure {
   margin-left: auto;
   margin-right: auto;
   padding-left: 10px;
-  max-width: 1250px;
+  max-width: 990px;
   font-family: 'Comfortaa', sans-serif;
   font-size: 200%;
   font-style: italic;
-  color: inherit;
+  color: #dcdcdc;
 }
 
 #menu {
@@ -186,7 +200,7 @@ div.images, div.figure {
   padding: 0;
   display: block;
   text-align: right;
-  max-width: 1250px;
+  max-width: 990px;
 }
 
 #menu li {
@@ -194,15 +208,14 @@ div.images, div.figure {
 }
 
 #menu a {
-  font-variant: small-caps;
-  padding-top: 1em;
-  padding-bottom: .2em;
-  height: 1em;
+  padding-top: .7em;
+  padding-bottom: .1em;
   color: inherit;
   display: block;
-  width: 5em;
+  width: 4em;
   text-align: center;
   font-weight: normal;
+  border-bottom: 2px solid #dcdcdc;
   transition: background-color, color, .8s;
 }
 
@@ -334,6 +347,7 @@ div#content {
   width: 240px;
   height: 240px;
   vertical-align: bottom;
+  border-radius: 3px;
 }
 
 .category article .article-content {
@@ -404,6 +418,7 @@ div#content {
 /* article */
 .article {
   margin-bottom: 2em;
+  max-width: 995px;
 }
 
 .article header {
@@ -458,25 +473,32 @@ div#content {
 .entry-content{
   margin-left: auto;
   margin-right: auto;
-  max-width: 1050px;
+  padding: 2em;
+  background-color:white;
+  border-radius: 3px;
 }
 
 .article .entry-content {
+  clear: both;
   text-align: justify;
 }
 
+.article .entry-content .contents ul {
+  list-style-type: none;
+}
+
 .article .entry-content p {
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: .25em .5em;
+  margin: 0.1em;
 }
 
 .article .entry-content ol {
-  padding-left: 3em;
+  padding-left: 2em;
   padding-right: 1em;
 }
 
 .article .entry-content ul {
-  padding-left: 3em;
+  padding-left: 2em;
   padding-right: 1em;
 }
 
@@ -485,30 +507,53 @@ div#content {
   padding-right: 1em;
 }
 
+.article .entry-content dt {
+  padding: 0.1em 0em;
+}
+
+.article .entry-content dd {
+  margin-left: 2em;
+  font-size: 90%;
+}
+
 .article .entry-content .formula {
   text-align: center;
 }
 
 .article .entry-content h2 {
-  background-color: #969696;
-  padding:0.5em;
-  font-size: 90%;
-  border-radius: 3px 3px 0 0;
+  color: inherit;
+  padding: .2em .5em;
+  font-size: 135%;
+  border-bottom: 4px solid #333333;
 }
 
 .article .entry-content h3 {
-  padding-left:0.5em;
+  color: inherit;
+  padding: .1em .5em .1em .5em;
+  font-size: 95%;
+  border-bottom: 1px solid #969696;
 }
 
 .article header h2 a {
   color: inherit;
 }
 
+tt.literal {
+  display: inline-block;
+  padding: .1em .3em .1em .3em;
+  font-size: 80%;
+  border: solid 1px;
+  border-radius: 5px;
+  background-color: #F3F3F3;
+}
+
+.share {
+  margin: .2em 0em;
+}
+
 .social {
   display: inline-block;
-  float: left;
   padding: .5em;
-  margin: .1em;
   text-align: right;
   border-radius: 3px;
 }
@@ -532,22 +577,19 @@ a.social {
 }
 
 .post-info {
-  margin-top: .1em;
-  margin-bottom: 2.5em;
   font-size: 70%;
-  width: 100%;
   text-align: right;
+  padding-right: .2em;
+  float: right;
+  max-width:45%;
 }
 
 .admonition {
-  border: 1px solid #333333;
-  border-top-width: 1em;
-  margin: 1em;
-  padding: 1em;
-  margin-left: auto;
-  margin-right: 1em;
-  max-width: 85%;
+  border: 1px solid #969696;
+  border-left-width: 1em;
   font-size: 85%;
+  padding: 1em;
+  margin: .5em 2em;
 }
 
 .admonition p {
@@ -567,6 +609,10 @@ a.social {
   display: block;
 }
 
+.admonition-downloadable-file > p:nth-child(2) a.external {
+    font-size: 160%;
+}
+
 .admonition-downloadable-file {
   display: block;
   float: right;
@@ -576,6 +622,7 @@ a.social {
   background-repeat: no-repeat;
   background-position: 10px 1em;
   padding-left: 55px;
+  border-color: #8c1717;
 }
 
 .blend4web-viewer {
@@ -635,7 +682,8 @@ a.social {
 
 div.images div.youtube {
   display: inline-block;
-  padding: .5em;
+  padding: 0em;
+  margin: 5px;
 }
 
 .youtube-16x9 > iframe {
@@ -654,15 +702,29 @@ div.images div.youtube-16x9 > iframe {
 
 /* for small devices */
 @media all and (max-device-width: 800px) {
+
+  body{
+    background: white;
+  }
+
   .info-block {
     min-height: inherit;
     padding: 1em;
+  }
+
+  .admonition-downloadable-file > p:nth-child(2) a.external {
+    font-size: 110%;
   }
 
   #imprint {
     padding: 1em;
     min-height: inherit;
   }
+
+  .entry-content{
+    padding: .0em;
+  }
+
 }
 
 @media all and (max-device-width: 590px) {
@@ -681,10 +743,6 @@ div.images div.youtube-16x9 > iframe {
     margin-right: 0;
   }
 
-  #imprint address {
-    padding-left: 1em;
-  }
-
   .article header img.cover {
     width: 100px;
     height: 100px;
@@ -695,4 +753,13 @@ div.images div.youtube-16x9 > iframe {
     width: inherit;
     margin: 2em;
   }
+
+  .article .entry-content h2 {
+    font-size: 100%;
+  }
+
+  .article .entry-content h3 {
+    font-size: 85%;
+  }
+
 }
