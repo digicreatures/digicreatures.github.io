@@ -30,11 +30,6 @@ to discover the dimension of your model.&lt;/dd&gt;
 &lt;dt&gt;Part 2: adjusting the rig&lt;/dt&gt;
 &lt;dd&gt;Adjusting the widget could still be necessary but the default location
 are now much more accurate.&lt;/dd&gt;
-&lt;dt&gt;Part 3: animating along a path&lt;/dt&gt;
-&lt;dd&gt;No need to tweak the delta position of the rig to use the follow path
-constraint. Now, when you generate the animation rig, the origin point of the
-rig is moved to the correct position. Just make sure to reset the position
-of the rig at the center of the scene with ALT+G.&lt;/dd&gt;
 &lt;dt&gt;Part 4: slamming on brakes&lt;/dt&gt;
 &lt;dd&gt;Brakes have their own animation widgets now.&lt;/dd&gt;
 &lt;/dl&gt;
