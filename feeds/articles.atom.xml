@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>digiCreatures - articles</title><link href="http://digicreatures.net/" rel="alternate"></link><link href="http://digicreatures.net/feeds/articles.atom.xml" rel="self"></link><id>http://digicreatures.net/</id><updated>2019-03-06T12:00:00+01:00</updated><entry><title>Rigacar</title><link href="http://digicreatures.net/articles/rigacar.html" rel="alternate"></link><published>2018-08-10T12:00:00+02:00</published><updated>2019-03-06T12:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2018-08-10:/articles/rigacar.html</id><summary type="html">&lt;p class="first last"&gt;a Blender add-on to rig... a car&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>digiCreatures - articles</title><link href="http://digicreatures.net/" rel="alternate"></link><link href="http://digicreatures.net/feeds/articles.atom.xml" rel="self"></link><id>http://digicreatures.net/</id><updated>2019-07-31T00:00:00+02:00</updated><entry><title>Rigacar</title><link href="http://digicreatures.net/articles/rigacar.html" rel="alternate"></link><published>2018-08-10T12:00:00+02:00</published><updated>2019-07-31T00:00:00+02:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2018-08-10:/articles/rigacar.html</id><summary type="html">&lt;p class="first last"&gt;a Blender add-on to rig... a car&lt;/p&gt;
 </summary><content type="html">&lt;div class="admonition admonition-downloadable-file"&gt;
 &lt;p class="first admonition-title"&gt;Downloadable file&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/digicreatures/rigacar/releases/latest"&gt;rigacar.zip&lt;/a&gt;&lt;/p&gt;
-&lt;p class="last"&gt;The add-on is available on GitHub for &lt;strong&gt;Blender 2.7x&lt;/strong&gt; and &lt;strong&gt;Blender 2.80 Beta&lt;/strong&gt;
-(with some limitations)&lt;/p&gt;
+&lt;p class="last"&gt;The add-on is available on GitHub for &lt;strong&gt;Blender 2.8x&lt;/strong&gt; and &lt;strong&gt;Blender 2.7x&lt;/strong&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;If you want to animate cars but you don't want to spend too much time for rigging,
 Rigacar could be helpful. It is a free add-on for &lt;a class="reference external" href="https://www.blender.org"&gt;Blender&lt;/a&gt; I developed for one of
