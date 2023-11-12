@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>digiCreatures</title><link href="https://digicreatures.net/" rel="alternate"></link><link href="https://digicreatures.net/feeds/all.atom.xml" rel="self"></link><id>https://digicreatures.net/</id><updated>2021-11-30T00:00:00+01:00</updated><entry><title>Rigacar</title><link href="https://digicreatures.net/articles/rigacar.html" rel="alternate"></link><published>2018-08-10T12:00:00+02:00</published><updated>2021-11-30T00:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2018-08-10:/articles/rigacar.html</id><summary type="html">&lt;p class="first last"&gt;a Blender add-on to rig... a car&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>digicreatures</title><link href="https://digicreatures.net/" rel="alternate"></link><link href="https://digicreatures.net/feeds/all.atom.xml" rel="self"></link><id>https://digicreatures.net/</id><updated>2021-11-30T00:00:00+01:00</updated><entry><title>Rigacar</title><link href="https://digicreatures.net/articles/rigacar.html" rel="alternate"></link><published>2018-08-10T12:00:00+02:00</published><updated>2021-11-30T00:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2018-08-10:/articles/rigacar.html</id><summary type="html">&lt;p class="first last"&gt;a Blender add-on to rig... a car&lt;/p&gt;
 </summary><content type="html">&lt;div class="admonition admonition-downloadable-file"&gt;
 &lt;p class="first admonition-title"&gt;Downloadable file&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/digicreatures/rigacar/releases/latest"&gt;rigacar.zip&lt;/a&gt;&lt;/p&gt;
@@ -75,7 +75,7 @@ and to create an accurate deformation rig.&lt;/p&gt;
 objects are objects used for the body, the wheels and the brake wheels in your model.
 The &lt;strong&gt;name for these reference objects should be suffixed&lt;/strong&gt; according to the
 rules describe in the following table:&lt;/p&gt;
-&lt;table border="1" class="colwidths-given docutils"&gt;
+&lt;table border="1" class="docutils"&gt;
 &lt;colgroup&gt;
 &lt;col width="20%" /&gt;
 &lt;col width="40%" /&gt;
@@ -199,7 +199,7 @@ add the rig again. Most of the time, it's just about using an iterative process.
 &lt;/div&gt;
 &lt;p&gt;Each generated bone is named following the same convention as the reference
 objects:&lt;/p&gt;
-&lt;table border="1" class="colwidths-given docutils"&gt;
+&lt;table border="1" class="docutils"&gt;
 &lt;colgroup&gt;
 &lt;col width="38%" /&gt;
 &lt;col width="63%" /&gt;
@@ -577,7 +577,7 @@ simpler material using the baked normal map.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;The following table shows some figures about the renderings:&lt;/p&gt;
-&lt;table border="1" class="colwidths-given docutils"&gt;
+&lt;table border="1" class="docutils"&gt;
 &lt;colgroup&gt;
 &lt;col width="50%" /&gt;
 &lt;col width="25%" /&gt;
@@ -654,7 +654,7 @@ Cycles provides normal information in world space. In order to bake normal, we
 have to transform normal vectors from world space to tangent space.
 So, we have to do the following operation:&lt;/p&gt;
 &lt;div class="formula"&gt;
-&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ts&lt;/i&gt;&lt;/sub&gt; = &lt;i&gt;M&lt;/i&gt;&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ws&lt;/i&gt;&lt;/sub&gt;
+&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ts&lt;/i&gt;&lt;/sub&gt; = &lt;i&gt;M&lt;/i&gt;&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ws&lt;/i&gt;&lt;/sub&gt;
 &lt;/div&gt;
 &lt;p&gt;Where &lt;span class="formula"&gt;&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ws&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt; is the normal vector in world space (the one created by the material),
 &lt;span class="formula"&gt;&lt;i&gt;M&lt;/i&gt;&lt;/span&gt; is the tranform matrix from world space to tangent space and &lt;span class="formula"&gt;&lt;i&gt;N&lt;/i&gt;&lt;sub&gt;&lt;i&gt;ts&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt;

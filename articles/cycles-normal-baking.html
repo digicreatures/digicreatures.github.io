@@ -4,10 +4,10 @@
     <meta name="keywords" content="3D,CG,3D generalist,Blender,Cycles,Rigging,Shading,Animation,Rendering,Krita,Gimp,Open source,Linux,David Gayerie,node,normal map,bake" />
   <meta name="author" content="David Gayerie" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>digiCreatures - Baking normal from Cycles material</title>
+<title>digicreatures - Baking normal from Cycles material</title>
         <meta charset="utf-8" />
-        <link href="https://digicreatures.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="digiCreatures Full Atom Feed" />
-        <link href="https://digicreatures.net/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate" title="digiCreatures Categories Atom Feed" />
+        <link href="https://digicreatures.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="digicreatures Full Atom Feed" />
+        <link href="https://digicreatures.net/feeds/articles.atom.xml" type="application/atom+xml" rel="alternate" title="digicreatures Categories Atom Feed" />
 
   <meta name="description" content="a useful node for baking normal correctly" />
   <link rel="stylesheet" href="https://digicreatures.net/theme/css/lightbox.min.css">
@@ -19,7 +19,7 @@
 </head>
 <body>
   <header id="banner">
-    <span>digiCreatures</span>
+    <span>digicreatures</span>
   </header>
   <nav id="menu"><ul>
     <li><a href="https://digicreatures.net/">home</a></li>
@@ -41,8 +41,8 @@
     </address>
   </footer>
   <div class="share">
-    <a id="sof" class="social facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fdigicreatures.net%2Farticles%2Fcycles-normal-baking.html" rel="nofollow">share <img class="logo" src="https://digicreatures.net/theme/images/facebook.png" alt="on facebook" title="you like it... share it"/></a>
-    <a id="sot" class="social twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Baking%20normal%20from%20Cycles%20material&amp;url=http%3A%2F%2Fdigicreatures.net%2Farticles%2Fcycles-normal-baking.html&amp;via=digicreatures" rel="nofollow">share <img class="logo" src="https://digicreatures.net/theme/images/twitter.png" alt="on twitter" title="you like it... share it"/></a>
+    <a id="sof" class="social facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fdigicreatures.net%2Farticles%2Fcycles-normal-baking.html" rel="nofollow">share <img class="logo" src="https://digicreatures.net/theme/images/facebook.png" alt="on facebook" title="you like it... share it"/></a>
+    <a id="sot" class="social twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Baking%20normal%20from%20Cycles%20material&amp;url=https%3A%2F%2Fdigicreatures.net%2Farticles%2Fcycles-normal-baking.html&amp;via=digicreatures" rel="nofollow">share <img class="logo" src="https://digicreatures.net/theme/images/twitter.png" alt="on twitter" title="you like it... share it"/></a>
   </div>
   <div class="entry-content">
     <div class="admonition note">
@@ -154,7 +154,7 @@ simpler material using the baked normal map.</p>
 </div>
 </div>
 <p>The following table shows some figures about the renderings:</p>
-<table border="1" class="colwidths-given docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="50%" />
 <col width="25%" />
@@ -231,7 +231,7 @@ Cycles provides normal information in world space. In order to bake normal, we
 have to transform normal vectors from world space to tangent space.
 So, we have to do the following operation:</p>
 <div class="formula">
-<i>N</i><sub><i>ts</i></sub> = <i>M</i><i>N</i><sub><i>ws</i></sub>
+<i>N</i><sub><i>ts</i></sub> = <i>M</i><i>N</i><sub><i>ws</i></sub>
 </div>
 <p>Where <span class="formula"><i>N</i><sub><i>ws</i></sub></span> is the normal vector in world space (the one created by the material),
 <span class="formula"><i>M</i></span> is the tranform matrix from world space to tangent space and <span class="formula"><i>N</i><sub><i>ts</i></sub></span>
