@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>digiCreatures - articles</title><link href="http://digicreatures.net/" rel="alternate"></link><link href="http://digicreatures.net/feeds/articles.atom.xml" rel="self"></link><id>http://digicreatures.net/</id><updated>2021-11-30T00:00:00+01:00</updated><entry><title>Rigacar</title><link href="http://digicreatures.net/articles/rigacar.html" rel="alternate"></link><published>2018-08-10T12:00:00+02:00</published><updated>2021-11-30T00:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2018-08-10:/articles/rigacar.html</id><summary type="html">&lt;p class="first last"&gt;a Blender add-on to rig... a car&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>digiCreatures - articles</title><link href="https://digicreatures.net/" rel="alternate"></link><link href="https://digicreatures.net/feeds/articles.atom.xml" rel="self"></link><id>https://digicreatures.net/</id><updated>2021-11-30T00:00:00+01:00</updated><entry><title>Rigacar</title><link href="https://digicreatures.net/articles/rigacar.html" rel="alternate"></link><published>2018-08-10T12:00:00+02:00</published><updated>2021-11-30T00:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2018-08-10:/articles/rigacar.html</id><summary type="html">&lt;p class="first last"&gt;a Blender add-on to rig... a car&lt;/p&gt;
 </summary><content type="html">&lt;div class="admonition admonition-downloadable-file"&gt;
 &lt;p class="first admonition-title"&gt;Downloadable file&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://github.com/digicreatures/rigacar/releases/latest"&gt;rigacar.zip&lt;/a&gt;&lt;/p&gt;
@@ -44,10 +44,10 @@ generation time.&lt;/dd&gt;
 &lt;/div&gt;
 &lt;div class="section" id="prepare-your-model"&gt;
 &lt;h2&gt;Prepare your model&lt;/h2&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/model.jpg" data-lightbox="rigacar"&gt;&lt;img alt="BMW 27 model" src="http://digicreatures.net/photos/rigacar/modelt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/model.jpg" data-lightbox="rigacar"&gt;&lt;img alt="BMW 27 model" src="https://digicreatures.net/photos/rigacar/modelt.jpg" /&gt;&lt;/a&gt;
 &lt;div class="admonition admonition-downloadable-file"&gt;
 &lt;p class="first admonition-title"&gt;Downloadable file&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://digicreatures.net/resources/rigacar/bmw27_with_rig.blend"&gt;bmw27_with_rig.blend&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://digicreatures.net/resources/rigacar/bmw27_with_rig.blend"&gt;bmw27_with_rig.blend&lt;/a&gt;&lt;/p&gt;
 &lt;p class="last"&gt;You can download the blend file with the model and the complete rig. Don't
 forget to download and install &lt;a class="reference external" href="https://github.com/digicreatures/rigacar/releases/latest"&gt;Rigacar&lt;/a&gt;.
 Nice BMW27 model used in this article is a modified version of the one available in the
@@ -134,7 +134,7 @@ object for the wheel rim and another for the tire. Consider one of these as
 the reference object and name it according to the convention.
 Then parent the others to this one. See below as an example, the outliner for
 the scene used in this article:&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/outliner_objects_hierarchy.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Objects hierarchy in the outliner" src="http://digicreatures.net/photos/rigacar/outliner_objects_hierarchyt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/outliner_objects_hierarchy.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Objects hierarchy in the outliner" src="https://digicreatures.net/photos/rigacar/outliner_objects_hierarchyt.jpg" /&gt;&lt;/a&gt;
 &lt;p&gt;If your model has more than one pair of wheels at front or at rear, use the same
 convention as Blender: add a number with 3 digits at the end: &lt;em&gt;mycar-Wheel.Ft.L.001&lt;/em&gt;,
 &lt;em&gt;mycar-Wheel.Ft.R.001&lt;/em&gt;, &lt;em&gt;mycar-Wheel.Ft.L.002&lt;/em&gt;, &lt;em&gt;mycar-Wheel.Ft.R.002&lt;/em&gt;...&lt;/p&gt;
@@ -165,7 +165,7 @@ spinning axis and the steering axis (only for front wheels)&lt;/dd&gt;
 align it with the origin of the wheel.&lt;/dd&gt;
 &lt;/dl&gt;
 &lt;p&gt;In the model below, you see the origin point and the name of each reference objects:&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/reference_objects.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Emphasizing reference objects for each part of the model" src="http://digicreatures.net/photos/rigacar/reference_objectst.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/reference_objects.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Emphasizing reference objects for each part of the model" src="https://digicreatures.net/photos/rigacar/reference_objectst.jpg" /&gt;&lt;/a&gt;
 &lt;p&gt;In the previous image, reference object for the body is yellow, reference objects
 for wheels are red and reference objects for brakes are green. All other objects
 are white and are parented to one reference object.&lt;/p&gt;
@@ -176,7 +176,7 @@ are white and are parented to one reference object.&lt;/p&gt;
 &lt;p&gt;Once you have installed the add-on, you can add a new kind of armature in your
 scene: a &lt;strong&gt;car deformation rig&lt;/strong&gt;. It is an armature with only bones
 used to animate directly your model: the body, the wheels and the brakes.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/add_menu.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Add menu to create a new car deformation rig" src="http://digicreatures.net/photos/rigacar/add_menut.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/add_menu.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Add menu to create a new car deformation rig" src="https://digicreatures.net/photos/rigacar/add_menut.jpg" /&gt;&lt;/a&gt;
 &lt;p&gt;When you add such an armature, Rigacar will try to discover reference objects
 amongst the selected objects. For each one found, Rigacar will automatically position
 the associated bones at the same origin point and will parent the reference object
@@ -195,7 +195,7 @@ let the add-on do the job for you&lt;/strong&gt;.&lt;/p&gt;
 deformation rig. If the rig seems not correct, it could be difficult to tweak
 it by hand. Consider checking the name and origin point of your objects then
 add the rig again. Most of the time, it's just about using an iterative process.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/deformation_rig_operator_panel.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Operator parameters panel when adding a car deformation rig" class="last" src="http://digicreatures.net/photos/rigacar/deformation_rig_operator_panelt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/deformation_rig_operator_panel.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Operator parameters panel when adding a car deformation rig" class="last" src="https://digicreatures.net/photos/rigacar/deformation_rig_operator_panelt.jpg" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;p&gt;Each generated bone is named following the same convention as the reference
 objects:&lt;/p&gt;
@@ -237,12 +237,12 @@ objects:&lt;/p&gt;
 &lt;p&gt;If your model has more than one front or back pair of wheels, additional
 bones will have name suffixed by a number: DEF-Wheel.Ft.L.001 or
 DEF-Wheel.Ft.R.001 for instance.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/deformation_rig_with_bonesname.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Name of the deformation bones generated" src="http://digicreatures.net/photos/rigacar/deformation_rig_with_bonesnamet.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/deformation_rig_with_bonesname.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Name of the deformation bones generated" src="https://digicreatures.net/photos/rigacar/deformation_rig_with_bonesnamet.jpg" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class="section" id="generate-the-complete-rig"&gt;
 &lt;h2&gt;Generate the complete rig&lt;/h2&gt;
 &lt;p&gt;Once the deformation rig is added, you can now generate the complete rig.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/generate_animation_rig.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Generate the final rig" src="http://digicreatures.net/photos/rigacar/generate_animation_rigt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/generate_animation_rig.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Generate the final rig" src="https://digicreatures.net/photos/rigacar/generate_animation_rigt.jpg" /&gt;&lt;/a&gt;
 &lt;p&gt;Use the button &lt;tt class="docutils literal"&gt;Generate&lt;/tt&gt; available in the properties panel in the 3D View. You can
 also find the same button in the properties of the armature.&lt;/p&gt;
 &lt;p&gt;The complete rig is generated and the animation widgets are dispatched over
@@ -262,7 +262,7 @@ the drift widget to control location and orientation of the car&lt;/li&gt;
 to tweak the generated rig (see below). Layer 15 is useful for riggers
 who want to extend the rig with more bones. For instance, if you want to add bones
 to control side doors, you should parent these new bones to &lt;em&gt;MCH-Body&lt;/em&gt; from this layer.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/animation_rig.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Side view and top view of the generated rig" src="http://digicreatures.net/photos/rigacar/animation_rigt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/animation_rig.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Side view and top view of the generated rig" src="https://digicreatures.net/photos/rigacar/animation_rigt.jpg" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class="section" id="tweak-the-generated-rig"&gt;
 &lt;h2&gt;Tweak the generated rig&lt;/h2&gt;
@@ -270,7 +270,7 @@ to control side doors, you should parent these new bones to &lt;em&gt;MCH-Body&l
 &lt;div class="section" id="check-the-spinning-of-the-wheels"&gt;
 &lt;h3&gt;Check the spinning of the wheels&lt;/h3&gt;
 &lt;p&gt;The animation rig can rotate wheels as you move your model along the Y axis.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_wheels_on_y_axis.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Activating the rotation of the wheels for motion along the Y axis" src="http://digicreatures.net/photos/rigacar/rigacar_panel_wheels_on_y_axist.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/rigacar_panel_wheels_on_y_axis.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Activating the rotation of the wheels for motion along the Y axis" src="https://digicreatures.net/photos/rigacar/rigacar_panel_wheels_on_y_axist.jpg" /&gt;&lt;/a&gt;
 &lt;p&gt;Be aware the spinning is only correct for translation on the Y axis.
 So, this feature is not the proper way to animate wheels with Rigacar (see section
 below). But it is useful to quickly check the generated rig. In the properties panel,
@@ -302,7 +302,7 @@ from a dedicated section in the properties panel. You can pick the object
 for the ground and adjust min/max local Z values to limit wheels vertical
 position to avoid inaccurate positions (like passing through the body).
 You can also pick the object in your scene which is the ground.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_properties.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Properties panel for ground sensors" src="http://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_propertiest.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_properties.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Properties panel for ground sensors" src="https://digicreatures.net/photos/rigacar/animation_rig_ground_constraint_propertiest.jpg" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;div class="section" id="adjust-suspension"&gt;
 &lt;h3&gt;Adjust suspension&lt;/h3&gt;
@@ -310,7 +310,7 @@ You can also pick the object in your scene which is the ground.&lt;/p&gt;
 Animation of these widgets is supposed to be subtle. Otherwise, your model
 will be stripped away. If you want, you can adjust this suspension effect in
 the &lt;em&gt;Animation Rig&lt;/em&gt; panel.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_suspension.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Properties panel for pitch factor and roll factor" src="http://digicreatures.net/photos/rigacar/rigacar_panel_suspensiont.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/rigacar_panel_suspension.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Properties panel for pitch factor and roll factor" src="https://digicreatures.net/photos/rigacar/rigacar_panel_suspensiont.jpg" /&gt;&lt;/a&gt;
 &lt;dl class="docutils"&gt;
 &lt;dt&gt;Pitch factor&lt;/dt&gt;
 &lt;dd&gt;This factor adjusts the variation on the local Z axis of the body when ground
@@ -333,7 +333,7 @@ independently. To add more widgets in pose mode, select the wheel widget to
 indicate which wheel must have its own brake widget. Search for the operator
 named &lt;tt class="docutils literal"&gt;Add missing brake wheel bones&lt;/tt&gt; by pressing &lt;tt class="docutils literal"&gt;F3&lt;/tt&gt; (search mode since
 Blender 2.8x).Then press &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; and the additional widget will be added.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/add_brake.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Searching the operator for adding missing brake" src="http://digicreatures.net/photos/rigacar/add_braket.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/add_brake.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Searching the operator for adding missing brake" src="https://digicreatures.net/photos/rigacar/add_braket.jpg" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="bake-wheels-animation"&gt;
@@ -341,12 +341,12 @@ Blender 2.8x).Then press &lt;tt class="docutils literal"&gt;Enter&lt;/tt&gt; and
 &lt;p&gt;Most of the time, you don't really need to animate wheels. Rigacar can bake the
 animation for you based on the motion of your model. So you should not animate
 the steering widget nor widget for wheels but use buttons to bake their animation.&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_bake.jpg" data-lightbox="rigacar"&gt;&lt;img alt="The bake panel" src="http://digicreatures.net/photos/rigacar/rigacar_panel_baket.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/rigacar_panel_bake.jpg" data-lightbox="rigacar"&gt;&lt;img alt="The bake panel" src="https://digicreatures.net/photos/rigacar/rigacar_panel_baket.jpg" /&gt;&lt;/a&gt;
 &lt;div class="section" id="bake-steering"&gt;
 &lt;h3&gt;Bake steering&lt;/h3&gt;
 &lt;p&gt;The button &lt;tt class="docutils literal"&gt;Bake car steering&lt;/tt&gt; computes animation of the steering. When you click
 on it, a popup dialog is displayed to adjust baking parameters:&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_bake_steering.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Parameters panel for bake car steering" src="http://digicreatures.net/photos/rigacar/rigacar_panel_bake_steeringt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/rigacar_panel_bake_steering.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Parameters panel for bake car steering" src="https://digicreatures.net/photos/rigacar/rigacar_panel_bake_steeringt.jpg" /&gt;&lt;/a&gt;
 &lt;dl class="docutils"&gt;
 &lt;dt&gt;Start frame and end frame&lt;/dt&gt;
 &lt;dd&gt;The range for the animation. By default it matches the range of the current
@@ -370,7 +370,7 @@ get some weird result.&lt;/strong&gt;&lt;/dd&gt;
 &lt;p&gt;The button &lt;tt class="docutils literal"&gt;Bake wheels rotation&lt;/tt&gt; computes spinning of the wheels. Rigacar
 takes into account the brake widgets to animate the wheels. When you click
 on it, a popup dialog is displayed to adjust baking parameters:&lt;/p&gt;
-&lt;a href="http://digicreatures.net/photos/rigacar/rigacar_panel_bake_wheels_rotation.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Parameters panel for bake wheels rotation" src="http://digicreatures.net/photos/rigacar/rigacar_panel_bake_wheels_rotationt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/rigacar/rigacar_panel_bake_wheels_rotation.jpg" data-lightbox="rigacar"&gt;&lt;img alt="Parameters panel for bake wheels rotation" src="https://digicreatures.net/photos/rigacar/rigacar_panel_bake_wheels_rotationt.jpg" /&gt;&lt;/a&gt;
 &lt;dl class="docutils"&gt;
 &lt;dt&gt;Start frame and end frame&lt;/dt&gt;
 &lt;dd&gt;The range for the animation. By default it matches the range of the current
@@ -467,7 +467,7 @@ I was looking for. So I decided to write my own add-on and finally to share it w
 Thanks to him for giving me inspiration.&lt;/p&gt;
 &lt;p&gt;Drive safely :)&lt;/p&gt;
 &lt;/div&gt;
-</content><category term="articles"></category><category term="rigacar"></category><category term="blender"></category><category term="rig"></category><category term="car"></category><category term="animation"></category></entry><entry><title>Baking normal from Cycles material</title><link href="http://digicreatures.net/articles/cycles-normal-baking.html" rel="alternate"></link><published>2017-06-10T12:00:00+02:00</published><updated>2019-03-04T12:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-06-10:/articles/cycles-normal-baking.html</id><summary type="html">&lt;p class="first last"&gt;a useful node for baking normal correctly&lt;/p&gt;
+</content><category term="articles"></category><category term="rigacar"></category><category term="blender"></category><category term="rig"></category><category term="car"></category><category term="animation"></category></entry><entry><title>Baking normal from Cycles material</title><link href="https://digicreatures.net/articles/cycles-normal-baking.html" rel="alternate"></link><published>2017-06-10T12:00:00+02:00</published><updated>2019-03-04T12:00:00+01:00</updated><author><name>David Gayerie</name></author><id>tag:digicreatures.net,2017-06-10:/articles/cycles-normal-baking.html</id><summary type="html">&lt;p class="first last"&gt;a useful node for baking normal correctly&lt;/p&gt;
 </summary><content type="html">&lt;div class="admonition note"&gt;
 &lt;p class="first admonition-title"&gt;Note&lt;/p&gt;
 &lt;p&gt;Important update since 2019-03-04&lt;/p&gt;
@@ -477,7 +477,7 @@ material when you bake the normals. Thanks to the Blender developers.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="admonition admonition-downloadable-file"&gt;
 &lt;p class="first admonition-title"&gt;Downloadable file&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://digicreatures.net/resources/normal_to_map.blend"&gt;normal_to_map.blend&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://digicreatures.net/resources/normal_to_map.blend"&gt;normal_to_map.blend&lt;/a&gt;&lt;/p&gt;
 &lt;p class="last"&gt;This file contains the &lt;em&gt;normal to map&lt;/em&gt; node for Cycles.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;If you have ever tried to bake normals in &lt;a class="reference external" href="http://www.blender.org"&gt;Blender&lt;/a&gt; using Cycles
@@ -512,7 +512,7 @@ are mathematically correct (otherwise the final normal map would create slightly
 than the original material). From my perspective, the most effective way was to create a special
 node in Cycles. I called it &lt;em&gt;normal to map&lt;/em&gt;. In this article, I will explain how to use it
 and the math foundations behind it.&lt;/p&gt;
-&lt;p&gt;If you just want to use the &lt;em&gt;normal to map&lt;/em&gt; node, you can &lt;a class="reference external" href="http://digicreatures.net/resources/normal_to_map.blend"&gt;download the blend file&lt;/a&gt;.
+&lt;p&gt;If you just want to use the &lt;em&gt;normal to map&lt;/em&gt; node, you can &lt;a class="reference external" href="https://digicreatures.net/resources/normal_to_map.blend"&gt;download the blend file&lt;/a&gt;.
 The file contains a very simple example and the node itself.
 This file is licensed under &lt;a class="reference external" href="https://creativecommons.org/publicdomain/zero/1.0/"&gt;CC0 1.0 Universal&lt;/a&gt;
 so you can freely use this node for your own purpose.&lt;/p&gt;
@@ -522,7 +522,7 @@ so you can freely use this node for your own purpose.&lt;/p&gt;
 &lt;p&gt;The &lt;em&gt;normal to map&lt;/em&gt; node is designed to be used when you want to bake normal information from your material
 in Cycles. So you should add it just before the baking process and remove it from your material afterward.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a href="http://digicreatures.net/photos/full_normal_baking/material_with_normal_to_map_node.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Material using the normal to map node" src="http://digicreatures.net/photos/full_normal_baking/material_with_normal_to_map_nodet.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/full_normal_baking/material_with_normal_to_map_node.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Material using the normal to map node" src="https://digicreatures.net/photos/full_normal_baking/material_with_normal_to_map_nodet.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Material using the &lt;em&gt;normal to map&lt;/em&gt; node&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The input slot &lt;em&gt;Normal&lt;/em&gt; expects the same input as standard BSDF nodes and it is the normal you want to bake.
@@ -532,7 +532,7 @@ your baking texture&lt;/strong&gt;. By default, Blender creates a texture in sRG
 so it should avoid some rounding issues during computation. You can change color space of your texture in the
 properties panel in the UV/image editor.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a href="http://digicreatures.net/photos/full_normal_baking/texture_color_space.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Texture color space in the UV/image editor" src="http://digicreatures.net/photos/full_normal_baking/texture_color_spacet.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/full_normal_baking/texture_color_space.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Texture color space in the UV/image editor" src="https://digicreatures.net/photos/full_normal_baking/texture_color_spacet.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Texture color space in the UV/image editor&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="admonition note"&gt;
@@ -551,7 +551,7 @@ properties panel in the UV/image editor.&lt;/p&gt;
 &lt;li&gt;click the bake button&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="figure"&gt;
-&lt;a href="http://digicreatures.net/photos/full_normal_baking/normal_to_map_steps.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Preview of all necessary steps" src="http://digicreatures.net/photos/full_normal_baking/normal_to_map_stepst.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/full_normal_baking/normal_to_map_steps.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Preview of all necessary steps" src="https://digicreatures.net/photos/full_normal_baking/normal_to_map_stepst.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Preview of all necessary steps&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;The node creates the appropriate colors to represent the normal information. So you must use an emission
@@ -568,11 +568,11 @@ from the original material using the &lt;em&gt;Normal to map&lt;/em&gt; node. I 
 simpler material using the baked normal map.&lt;/p&gt;
 &lt;div class="images docutils container"&gt;
 &lt;div class="figure"&gt;
-&lt;a href="http://digicreatures.net/photos/full_normal_baking/portrait.2000s.16_03.materialbump.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Using the original material" src="http://digicreatures.net/photos/full_normal_baking/portrait.2000s.16_03.materialbumpt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/full_normal_baking/portrait.2000s.16_03.materialbump.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Using the original material" src="https://digicreatures.net/photos/full_normal_baking/portrait.2000s.16_03.materialbumpt.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Using the original material&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure"&gt;
-&lt;a href="http://digicreatures.net/photos/full_normal_baking/portrait.2000s.13_55.usingnormaltomap.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Using the normal map baked with the Normal to map node" src="http://digicreatures.net/photos/full_normal_baking/portrait.2000s.13_55.usingnormaltomapt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/full_normal_baking/portrait.2000s.13_55.usingnormaltomap.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Using the normal map baked with the Normal to map node" src="https://digicreatures.net/photos/full_normal_baking/portrait.2000s.13_55.usingnormaltomapt.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Using the normal map baked with the &lt;em&gt;Normal to map&lt;/em&gt; node&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -613,7 +613,7 @@ at the two images above, they seem to be identical... but they are not! If you o
 separate tabs at full size and switch between them, you will notice a weird effect: some details seem to slip
 over the surface! Look at the image below to see this effect:&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="detail of the slip over effect" src="http://digicreatures.net/images/full_normal_baking/portrait_detail_normal_to_map_variation.gif" /&gt;
+&lt;img alt="detail of the slip over effect" src="https://digicreatures.net/images/full_normal_baking/portrait_detail_normal_to_map_variation.gif" /&gt;
 &lt;p class="caption"&gt;The &lt;em&gt;slip over&lt;/em&gt; effect between original material and material using the baked texture&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;It took me a day to convince myself this effect was not created by the &lt;em&gt;Normal to map&lt;/em&gt; node!
@@ -624,7 +624,7 @@ a different height. To achieve the same result with a normal map, the texture mu
 least two pixels to encode the variation of height. But most of all, there is a shift between
 the bump map and the normal map.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="shift between bump map and normal map" src="http://digicreatures.net/images/full_normal_baking/bumpmap_vs_normalmap.png" /&gt;
+&lt;img alt="shift between bump map and normal map" src="https://digicreatures.net/images/full_normal_baking/bumpmap_vs_normalmap.png" /&gt;
 &lt;p class="caption"&gt;Shift between bump map and normal map&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;So when we want to convert directly or indirectly, bump map info into normal map info, we
@@ -662,17 +662,17 @@ is the normal vector in tangent space (the one we want to get).
 The tranform matrix &lt;span class="formula"&gt;&lt;i&gt;M&lt;/i&gt;&lt;/span&gt; is a 3x3 matrix composed in line by the tangent vector,
 the bitangent vector and the original normal vector of the face:&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="transformation matrix" src="http://digicreatures.net/images/full_normal_baking/ws2ts_matrix.png" /&gt;
+&lt;img alt="transformation matrix" src="https://digicreatures.net/images/full_normal_baking/ws2ts_matrix.png" /&gt;
 &lt;/div&gt;
 &lt;p&gt;Cycles provides tangent vector and normal vector for the current face. We
 can easily compute bitangent vector as the cross product of normal vector and tangent vector.
 However, Cycles has no support for matrix operation but we can easily decompose the operations:&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;img alt="transformation matrix decomposition" src="http://digicreatures.net/images/full_normal_baking/ws2ts_matrix_computation.png" /&gt;
+&lt;img alt="transformation matrix decomposition" src="https://digicreatures.net/images/full_normal_baking/ws2ts_matrix_computation.png" /&gt;
 &lt;/div&gt;
 &lt;p&gt;and create the node set to do the math:&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a href="http://digicreatures.net/photos/full_normal_baking/normal_to_map_wstots.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="From world space to tangent space in Cycles" src="http://digicreatures.net/photos/full_normal_baking/normal_to_map_wstotst.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/full_normal_baking/normal_to_map_wstots.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="From world space to tangent space in Cycles" src="https://digicreatures.net/photos/full_normal_baking/normal_to_map_wstotst.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;From world space to tangent space in Cycles&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;All this could have been much simpler if the
@@ -684,7 +684,7 @@ We have to transform these coordinates to color values between 0 and 1. The
 &lt;a class="reference external" href="https://docs.blender.org/manual/en/dev/render/cycles/nodes/types/vector/curves.html"&gt;Vector Curves&lt;/a&gt;
 node can do the math for us.&lt;/p&gt;
 &lt;div class="figure"&gt;
-&lt;a href="http://digicreatures.net/photos/full_normal_baking/normal_to_map_color_management.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Converting vector to color" src="http://digicreatures.net/photos/full_normal_baking/normal_to_map_color_managementt.jpg" /&gt;&lt;/a&gt;
+&lt;a href="https://digicreatures.net/photos/full_normal_baking/normal_to_map_color_management.jpg" data-lightbox="full_normal_baking"&gt;&lt;img alt="Converting vector to color" src="https://digicreatures.net/photos/full_normal_baking/normal_to_map_color_managementt.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Converting vector to color&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Finally, sRGB color space means that Blender will apply a gamma correction of 1/2.2 because file formats
